@@ -1,0 +1,44 @@
+%To mathematically curb this infinite growth, and to biologically allow for intraspecies interactions, a non-linear term is required, and a quadratic is the easiest non-linearity to handle.
+Interactions between organisms are incorporated in a mathematical model of population dynamics by introducing a nonlinearity into the birth or death rates \cite{a million}. %or, this is the simplest/one way to do so
+Biologically this means the per capita birth rate is reduced by the presence of competitors, for instance if the competitors reduce the resource abundance and growth is slowed \cite{Nadell2008,Vulic2001}. 
+Alternatively, the per capita death rate can be increased by neighbours, perhaps due to secreted factors like toxins or waste products introduced by those neighbours \cite{Greenhalgh1990,VanMelderen2009,Rankin2012}. 
+The biological reality determines how this shows up in a mathematical model that captures the growth and decay of the population. 
+%We include the parameter $\delta$ to account for the stochastic relevance of the absolute values of the per capita birth and death rates, but in the deterministic limit only their difference $r$ affects the dynamics of the system.
+%Parameter $q$ describes where the intraspecies inhibition acts: a high $q$ near unity implies competition for resources and a decreased effective birth rate, whereas a low $q$ near zero reflects more direct conflict, with intraspecies interactions resulting in greater death rates of organisms.
+A typical approach is to use deterministic dynamics, which arise as a large population limit of a stochastic system \cite{Nisbet1982,Gardiner2004,others?}. 
+However, only the difference of the stochastic birth and death rates is observed, so anything that acts to commensurately change both the birth and death rates is undetected \cite{Norden1982,Nasell2001}. 
+
+The deterministic equation we consider is the logistic equation, one of the most common models to describe a biological system \cite{Ovaskainen2010,Newman2004,Allen2005,Assaf2009}.
+It shows up in epidemiology \cite{Assaf2009,others?}, biodiversity \cite{Hubbell2001?,others?}, and generally as a default for modelling a population that grows to a constant value \cite[bacteria OD, eg; ask Ue-yu].
+For a population of $n$ individuals, we will be dealing with stochastic equations that give the deterministic limit
+\begin{equation}
+ \frac{dn}{dt} = r\,n\left(1-\frac{n}{K}\right),
+ \label{logistic}
+\end{equation}
+where $r$ is a rate constant and $K$ is a carrying capacity, a phenomenological measure of the system size.
+Starting from only a deterministic equation there is some freedom to choose the stochastic rates for birth ($b_n$) and death ($d_n$).
+As the choice of birth and death rates contains ambiguity, researchers have leeway in making their decision, resulting in a variety of similar but distinct models \cite{Newman2004,Allen2005,Assaf2009}.
+
+
+The objective of this work is to investigate the impact of this choice on one measurable quantity, the mean time to extinction (MTE).
+The MTE is the mean of the probability distribution of exit times of the system; it gives the timescale on which we expect the species to go extinct.
+Given enough time in a stochastic system, it is increasingly likely that a series of fluctuations, say in birth and death events, will bring the system to an extinction state from which it cannot escape called an absorbing state.
+
+The master equation is a formalism capable of describing how the MTE depends on our choice of birth and death rates.
+It relates the time evolution of the probability of being in each state to the combination of transition rates between states.
+The probabilities resulting from solution of the master equation allow us to solve for other observables such as the mean and variance of our system.
+The parameter dependence of the MTE for various systems has already been researched using the master equation formalism\cite{Nadell1982,others?} and offers relevant starting points for our investigation. 
+
+In most cases, however, only the one dimensional MTE can be solved exactly \cite{?}.
+For more complicated situations an approximation is necessary, and there exist many such approximation techniques \cite{}.
+These techniques tend to rely on a system size expansion and assume that the population is typically large, a reasonable assumption in most biological systems. 
+While these different approximations do exhibit similarities, their underlying assumptions and algorithms generate discrepancies in their results. 
+It is non-trivial to determine in what regimes certain approximations work best, hence a comparison of these approximations gives insight as to which is best suited for specific ranges of parameters. 
+
+Along with the comparison of common approximations, this paper seeks to explore the parameter space, and biological meaning therein, of stochastic models of the logistic equation as they influence the mean time to extinction. 
+First we will introduce the logistic model in more detail.
+Then both the steady state population distribution and MTE will be calculated to elucidate their dependence on the model parameters. 
+Various common approximation techniques will be investigated and compared to the exact results. 
+Finally, a discussion of the results will conclude that increasing the birth and death rates commensurately leads to greater population variance and lesser MTEs, and that the choice of model is of critical importance when establishing a system from which to draw conclusions.
+%using a logistic model without justification allows for only the broadest of results to be credible, with most details being vacuous
+

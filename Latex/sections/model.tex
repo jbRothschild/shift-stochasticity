@@ -1,0 +1,49 @@
+The simplest model of an isolated population has linear birth and death terms (that is, the per capita birth and death rates are constant).
+This model is a classic but gives the outcome of population explosion with some probability\cite{Nisbet1982}. %it’s not a time, it’s a fraction of the instances
+%, as probably is the case with constant birth/death (immigration/emigration) or any combination of these two. [find examples]
+To mathematically curb this infinite growth, and to biologically allow for intraspecies interactions, a non-linear term is required, and a quadratic is the easiest non-linearity to handle.
+The difference between per capita birth and death gives some rate constant $r$, and this rate constant is inhibited by the density of the population, hence a decrease by $n/K$, giving the desired quadratic term.
+This is exactly the logistic equation \ref{logistic}.
+
+Extinction occurs at $n=0$, an unstable fixed point of the logistic equation, whereas there is a stable fixed point at $n=K$.
+%The logistic equation \ref{logistic} has fixed points at extinction and the carrying capacity, $n=0$ and $n=K$ respectively.
+Common practice in dynamical systems analysis is to rescale variables to remove parameters and simplify the system.
+Since we are dealing with continuous time we can remove the rate constant from our equation; we do so by rescaling the time by $r$.
+Similarly, in the deterministic equation we could rescale $n$ by $K$ and have no remaining parameters.
+However, in the stochastic version we cannot apply this latter rescaling, because of the implicit population scale of $\pm1$ organism for each birth/death event. %or “because the integer number of organisms has an implicit population scale of 1.” %organism/individual
+
+Here we have assumed that the stochasticity comes from the discretization of the population, that it must exist at integer values, in opposition with the results of a deterministic model like equation \ref{logistic}.
+Such stochasticity is termed demographic noise.
+Instead of a birth rate $b_n$ we assume that each birth event is independent and distributed exponentially with a probability $b_n\,dt$ of occuring in each infinitesimal time interval $dt$, and this is similarly assumed for death events. %too technical? Or esoteric?
+In this paper we use the birth rate
+\begin{equation}
+ b_n = \Big(1 + \frac{\delta}{2}\Big)\,r\,n - \frac{q\,r}{K}n^2% = r\,n\left(1+\frac{\delta}{2}-q\,n/K\right)
+\label{birth}
+\end{equation}
+and death rate
+\begin{equation}
+ d_n = \frac{\delta}{2}\,r\,n + \frac{(1-q)r}{K} n^2 = r\,n\left(\frac{\delta}{2}+(1-q)\,n/K\right).
+\label{death}
+\end{equation}
+Note that we introduce two new parameters in our equations \ref{birth} and \ref{death}: $q\in[0,1]$ shifts the nonlinearity between the death term and the birth term whereas the parameter $\delta\in[0,\infty)$ establishes a scale for the contribution of linear terms in both the birth and death rates.
+We include the parameter $\delta$ to account for the stochastic relevance of the absolute values of the per capita birth and death rates, but in the deterministic limit only their difference $r$ affects the dynamics of the system.
+Parameter $q$ describes where the intraspecies inhibition acts: a high $q$ near unity implies competition for resources and a decreased effective birth rate, whereas a low $q$ near zero reflects more direct conflict, with intraspecies interactions resulting in greater death rates of organisms.
+%In this formulation we can vary the strength of the density-dependence in the per capita death and birth rates by the factor $q$.
+It can be readily checked that $b_n-d_n$ recovers the right-hand side of equation \ref{logistic} where, as per design, the new parameters $q$ and $\delta$ do not appear.
+The choice of these parameters specifies a particular model and has consequences on the MTE.
+%We will find that this choice has consequences on the MTE. %and pdf
+
+The model described above has one other notable feature.
+Except at $q=0$, there is a population at which the competition brings the effective birth rate to zero.
+This is the maximum size the population can achieve, and we define this cutoff as
+%This limits the population to a maximal size $N = \lceil n_{max}\rceil$, where $n_{max}$ is defined as the population size such that $b_{n_{max}}=0$.
+%From equation \ref{birth} we find that
+\begin{equation}
+N = \frac{K}{q}\Big(\,1 + \frac{\delta}{2}\,\Big).
+\label{maxN}
+\end{equation}
+Therefore we limit our calculations to the biologically relevant range $n\in[0,N]$. % and, for completeness to our study, we can readily check that for our range of parameters $N\geq K$.
+Already it is evident that the ``hidden" parameters of $\delta$ and $q$ have an effect on the system, as different values of the parameters will naturally define a range of states accessible in the model.
+Note that so long as $q\leq 1$ the death rate is positive semi-definite for the domain of interest. % as defined previously does not imply any necessary subtle manipulation of the population range since the death rate is always positive (except at $n=0$) in the range of $q$ and $\delta$ described earlier.
+%The lower bound of the population range for all models is at our unstable fixed point representing an extinct species $n=0$.
+At $n=0$ both the birth and death rates go to zero: this is the stochastic absorbing state.

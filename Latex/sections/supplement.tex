@@ -1,0 +1,73 @@
+
+\section{notes to selves}
+Need to reference/cite: Allen
+MattheW - find small n reference!
+Pick and stick with one textbook (Nisbet vs Gardiner)
+Have subheadings in italics for the different techniques, whatever?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{PREVIOUSLY: Stochastics}
+Consider the stochastic system with birth
+\begin{equation}
+ b(n) = r\,n - q\,r\,n^2/K = r\,n\left(1-q\,n/K\right)
+\end{equation}
+and death
+\begin{equation}
+ d(n) = (1-q)r\,n^2/K.
+\end{equation}
+When $q=0$ I have the system I've already done some research on.
+In general, $q\in[0,1)$ is a parameter that shifts the nonlinearity between the death term and the birth term.
+Note that, in order to interpret there quantities as rates per infinitesimal time of Poisson processes, or alternately to interpret these are probabilities, both of which are standard characterizations, the quantities must remain positive.
+This leads to some funny business where your birth rate has to be piecewise or else $K/q$ has to be chosen such that it is an integer, leading to a finite domain of integers between $0$ and $K/q$ inclusively ($n\in[0,K/q]|n\in\mathbb{Z}$).
+
+Solving the backward equation can be done iteratively to get
+\begin{equation} \label{etime-approx0}
+ \tau_e[n_0] = \sum_{i=1}^{\infty}q_i + \sum_{j=1}^{n_0-1} S_j\sum_{i=j+1}^{\infty}q_i,
+\end{equation}
+where
+\begin{equation}
+ q_i = \frac{b(i-1)\cdots b(1)}{d(i)d(i-1)\cdots d(1)}
+\end{equation}
+and
+\begin{equation}
+ S_i = \frac{d(i)\cdots d(1)}{b(i)\cdots b(1)}.
+\end{equation}
+Again, note that these sums should not go to infinity if the state space is constrained to be finite.
+This can be done, which results in some hypergeometricPFQ functions (according to Mathematica).
+Figure \ref{tauvK} shows the results.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{Figure5}
+\caption{\emph{Mean time to extinction with the nonlinearity shared between the death and birth rates.}  The red line shows the result when the nonlinearity is purely in the death term.  The blue lines show the shared nonlinearity, with $q$ going from $0.1$ to $0.9$ giving increasing extinction times.  The green lines correspond to a similar model done by Assaf and Meerson (2009) that I have not yet recovered the citation for.  The cyan line is the Moran result (linear in $K$), for reference.  } \label{tauvK}
+\end{figure}
+
+Assaf and Meerson (2009) apparently did something similar, though I cannot find that paper at the moment.
+All I have is my interpretation of their results.
+Apparently they have a birth rate something like $b(n)=r\,A\,n + r\,B\,n^2/K$ and a death rate like $d(n)=r\,C\,n + r\,D\,n^2/K$ such that it recovers the appropriate deterministic DE.
+
+These results shown in figure \ref{tauvK} should be a little disconcerting.
+They suggest that similar models, ones that give the same deterministic equation, can give very different extinction times.
+They are not qualitatively different, in that they are all dominated by their exponential term.
+However, the prefactor of the exponential depends on $q$, and since the scales in biology are typically large ($K\gg1$) this corresponds to drastically different expected mean extinction times.
+
+
+\section{PREVIOUSLY: WKB}
+to come:  you can do a similar breakdown using the WKB method of Meerson et al, and come to similar results

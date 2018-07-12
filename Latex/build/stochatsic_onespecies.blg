@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: build/stochatsic_onespecies.aux
+White space in argument---line 2 of file build/stochatsic_onespecies.aux
+ : \citation{a
+ :             million}
+I'm skipping whatever remains of this command
+White space in argument---line 37 of file build/stochatsic_onespecies.aux
+ : \citation{paper
+ :                 this R}
+I'm skipping whatever remains of this command
+White space in argument---line 38 of file build/stochatsic_onespecies.aux
+ : \citation{T
+ :             comes from}
+I'm skipping whatever remains of this command
+White space in argument---line 69 of file build/stochatsic_onespecies.aux
+ : \citation{Generating
+ :                      function stuff}
+I'm skipping whatever remains of this command
+White space in argument---line 72 of file build/stochatsic_onespecies.aux
+ : \citation{WKB
+ :               paper(Assaf2016?)}
+I'm skipping whatever remains of this command
+The style file: unsrt.bst
+Database file #1: library.bib.bib
+Repeated entry---line 4793 of file library.bib.bib
+ : @article{Assaf2009
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "others?"
+Warning--I didn't find a database entry for "Hubbell2001?"
+Warning--I didn't find a database entry for "."
+Warning--I didn't find a database entry for "Nadell1982"
+Warning--I didn't find a database entry for "?"
+Warning--I didn't find a database entry for "etc"
+Warning--I didn't find a database entry for "smalln"
+Warning--I didn't find a database entry for "textbooks"
+Warning--I didn't find a database entry for "Servais1985"
+Warning--there's a number but no volume in Vulic2001
+Warning--can't use both volume and number fields in Allen2005
+Warning--empty publisher in Allen2005
+Warning--empty journal in Assaf2016
+You've used 17 entries,
+            1791 wiz_defined-function locations,
+            585 strings with 6242 characters,
+and the built_in function-call counts, 3517 in all, are:
+= -- 319
+> -- 133
+< -- 1
++ -- 52
+- -- 35
+* -- 268
+:= -- 571
+add.period$ -- 51
+call.type$ -- 17
+change.case$ -- 15
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 153
+empty$ -- 355
+format.name$ -- 35
+if$ -- 758
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 20
+newline$ -- 88
+num.names$ -- 17
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 54
+stack$ -- 0
+substring$ -- 234
+swap$ -- 18
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 37
+width$ -- 19
+write$ -- 187
+(There were 6 error messages)

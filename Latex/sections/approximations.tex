@@ -1,0 +1,234 @@
+%[Why we need approximations if we have the exact solution.] - Jeremy
+As we have shown, for a one-species model it is possible to write down a closed form solution for the MTE $\tau_e$.
+However, finding a general solution for the mean time to extinction given multiple populations is not as trivial.
+Models of stochastic processes away from equilibrium are also difficult to study.
+Many approximations have been developed to accommodate these complications.
+These approximations make the calculations possible or reduce the computing runtime significantly, therefore it is important to know which ones to use and when they are applicable.
+Unfortunately the regime of parameter space in which each approximation is valid is not very well understood.
+We evaluate these approximations and compare them to our exact results, in order to gain insight into their utility.
+%Some insights can be gained from evaluating these approximations in situations that are solvable and thus we will present some of these techniques before discussing our results of the exact solution. % to our stochastic model.
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+describe?
+Mention here?
+eq’ns
+paragraph
+notes
+appendix
+1D sum
+
+
+NO
+No
+
+
+
+
+
+
+
+
+Eigenvalue method
+
+
+No
+
+
+No - for now
+
+
+
+
+Same as tau 1 sum?
+
+
+Tau 1 sum
+yes
+yes
+
+
+A
+
+
+
+
+1D analytic
+(tau1 gives hypergeometric)
+no
+no
+
+
+
+
+MattheW try this again
+
+
+QSD algo -> MTE
+
+
+yes
+yes
+1/d1P1
+B
+Just to find MTE
+
+
+Small n
+
+
+yes
+yes
+Eq’n possibly if it exists
+C
+MattheW: But how tho
+if
+FP full
+
+
+yes
+yes
+
+
+D
+
+
+yes
+FP gaussian
+
+
+yes
+yes
+Ref 1/d1P1
+And eq’n
+D
+
+
+yes
+FP approx pdf -> MTE
+
+
+Yes for pdf, no for tau
+yes
+
+
+D
+
+
+
+
+FP WKB
+no
+briefly
+
+
+E
+
+
+yes
+WKB real
+
+
+yes
+yes
+Ref 1/d1P1
+And eq’n
+E
+
+
+yes
+WKB generating
+no
+briefly
+
+
+E
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fi
+%D - MattheW
+Starting from the master equation \ref{master-eqn} and expanding the $\pm 1$ terms as $P_{n\pm 1} \approx P_n \pm \partial_n P_n + \partial^2_n P_n$ we arrive at the popular Fokker-Planck (FP) equation:
+%. This is known as the Van Kampen expansion \cite{}. - actually the Kramers-Moyal expansion \cite{Gardiner2004 or whomever}
+\begin{equation}
+\partial_t P_n(t) = - \Big( b_n - d_n \Big) \partial_n P_n(t) + \frac{1}{2 K} \Big( b_n + d_n \Big) \partial_n^2 P_n(t).  \label{FP}
+\end{equation}
+Instead of a difference differential equation for the probability, equation \ref{FP} is a partial differential equation for the probability density.
+The first term on the right hand side is called the drift term and corresponds to the dynamical equation at the deterministic limit, when fluctuations are neglected.
+The second term is the diffusion term and describes the magnitude of the effect of stochasticity on the system.
+A quasi-steady state can be calculated when the time derivative $\partial_t P_n(t)$ is small.
+To simplify the situation further the birth and death rates can be linearized about the fixed point, which implies a Gaussian solution to the FP equation.
+Equation \ref{FP} can also be solved directly to give a MTE \cite{Gardiner2004}.
+
+%E - Jeremy
+Another method frequently studied is the WKB approximation \cite{}.
+The WKB method involves approximating the solution to a differential equation with a large parameter (such as $K$) by assuming an exponential solution (an ansatz) of the form
+\begin{equation}
+P_n \backsim e^{K\sum_i \frac{1}{K^i}S_i(n)}.
+\label{ansatz}
+\end{equation}
+Starting again from the masters equation \ref{master-eqn}, one can immediately apply the ansatz in the probability distribution and solve the subsequent differential equations to different orders in $1/K$\cite{Assaf2016,etc}.%careful, Assaf2016 is an arXiv paper
+To leading order, only $S_0(n)$ is needed.
+This method is commonly referred to as the real-space WKB approximation, wherein we obtain a solution for the quasi-stationary probability distribution.
+Another method, known as the momentum-space WKB, is to write an evolution equation of the generating function of $P_n$, the conjugate of the master equation, and then apply the exponential ansatz \cite{Generating function stuff}.
+
+%C - MattheW
+Rather than approximating the probability distribution function near the fixed point, a different approximation can be done to estimate the probability distribution function near the absorbing state $n=0$. %this still could be formulated simply as a steady state approximation - see Gardiner p.237
+If the bulk of the probability mass is centered on $K$ then the probability of being close to the absorbing state is small (note that this is similar to the quasi-stationary approximation, since the flux out of the system is proportional to the probability of being at a state close to $0$).
+Furthermore, we assume that the probability distribution function grows rapidly, away from the absorbing state, such that $P_{n+1}\gg P_n$, whereas neighbouring birth and death rates are of the same order \cite{smalln}.
+Rewriting the master equation \ref{master-eqn} as $\partial_t P_n = \left(b_{n-1} P_{n-1} - b_n P_n \right) + \left(d_{n+1}P_{n+1} - d_n P_n\right)$ we approximate the left hand side as zero and the right hand side as $\left(-b_n P_n \right) + \left( d_{n+1} P_{n+1}\right)$.
+Rearranging this gives $P_n = \frac{b_{n-1}}{d_n}P_{n-1} = \prod_{i=2}^n \frac{b_{i-1}}{d_i} P_{1}$. %make sure it looks nice, like Gardiner
+$P_{1}$ can be found by ensuring the probability is normalized; despite the sum extending beyond the region for which $P_{n+1}\gg P_n$ is valid, the probability distribution generated from this small $n$ approximation is qualitatively reasonable.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{Figure4}
+\caption{\emph{Techniques for calculating a probability distribution function} A comparison of the different probability distribution approximations show how the described dynamics at equilibrium may differ for various techniques.} \label{pdf_techn}
+\end{figure}
+
+
+%[PDFs can be approximated, as explained earlier] - Jeremy
+As we have described, certain of these approximation methods permit the calculation of a quasi-stationary distribution.
+%Hence, a method that can consistently obtain the correct distribution is a powerful tool.
+Figure \ref{pdf_techn} gives us an instance of the quasi-stationary distribution as a function of the parameters $q$, $\delta$ and $K$ for each technique.
+%Note that for the shown range of the parameters the WKB approximation and the quasi-stationary algorithm are not distinguishable by eye, though there are indeed slight differences.
+In general, the ability of the techniques to successfully approximate the quasi-stationary distribution depends heavily on the region of parameter space.
+The WKB method appears to be reasonable everywhere, and the FP approximation is only valid for large $K$ except for low $\delta$ and $q$. %for high K, WKB is always good, FP is good except for low low; for low K, WKB still good, FP bad except for low high; others are bad everywhere
+%and small n?
+It is also possible to obtain the mean time to extinction from these distributions.
+As described earlier, the quasi-stationary probability distribution leaks from $P_n$, a non-extinct population, to $P_0$.
+As we are dealing with a single step process, the only transition from which we can reach the absorbing state is through a death at $P_1$: all population extinctions must go through this sole state.
+The flux of the probability to the absorbing state is thus given by the expression $d(1)P_1$, hence the approximation \cite{textbooks,WKB paper(Assaf2016?)}
+\begin{equation}
+\tau_e \approx \frac{1}{d(1)P_1}.
+ \label{1overd1P1}
+\end{equation}
+This same equation can be applied to different methods and algorithms that have produced quasi-stationary distributions. % for which we have an expression for $P_1$.
+
+%A - Jeremy%not just here but elsewhere too, I ask: do we want subtitles/subsections? Ie. inline italic sentence fragments: “Reducing the 1D sum”
+By omitting negligeable terms from the full solution to the MTE, equation \ref{analytic_mte}, we can heavily reduce the computational runtime in our calculation.
+This becomes important at large population sizes, as the the number of terms in the analytical solution scale with the maximal size of the population.
+$\tau_1$, the time it takes for the population to go extinct from a size of one individual, is also the first term in our sum and the dominant term in the solution.
+Setting $\tau_e ~ \tau_1$ turns out to be a fine approximation.
+However it is only a useful approximation for reducing computation runtime: we learn no more about the dependencies of the MTE on $q$ and $\delta$ than we do for the exact solution.
+%!!!We’re writing tau_e. Also b_n and d_n. Also using \delta instead of \delta/2. Also model vs models - use models in general and model for a parameter choice. Also American modeling or UK modelling. Do we ever say pdf or is it always probability distribution (function)?
+
+%Results of the tau_e approximations presented above - Jeremy
+Having calculated the MTE using each approximation, we can now compare the results to the exact solution and verify their accuracy in the parameter space of $\delta$ and $q$.
+These results are summarized in Figure \ref{mte_techn}.
+As with the probability distribution function, the difference between the solution of the approximations and equation \ref{analytic_mte} is dependent on $q$, $\delta$ and $K$.
+Most of the solutions tend to converge at very low $K$, the divergence of each approximation occurring with increasing $K$.
+From this difference we can evaluate in which regime certain approximations work best.
+We find that while no approximation works well for large $\delta$, many of them recover the correct scaling in $K$, albeit off by a factor. %yeah?
+For all other parameter regimes, $\tau_1$ and the WKB approximation are both reasonable approximations for the exact results. %!!!CHECK if this is true for small n as well
+%, and Fokker-Planck QSD? And small n? And full FP%
+%I think we need to be a bit more specific with our assessment of the approximations
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{Figure5}
+\caption{\emph{Techniques for calculating the mean time to extinction} Plotted as a function of the carrying capacity, a comparison of the ratio of the MTE of different techniques to that of the 1D sum reveals the ranges for which they are more accurate for approximating $\tau_{e}$.} \label{mte_techn}
+\end{figure}

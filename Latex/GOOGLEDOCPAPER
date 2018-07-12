@@ -1,0 +1,481 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[utf8x]{inputenc}
+%\usepackage{wrapfig}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+%\graphicspath{{C:/Users/zilmangroup/Documents/mathematica/images/}} %%%%%%%%%%%%%%%
+\graphicspath{{/home/jrothschild/Research/PopDyn_variation/Figures/}} %%%%%%%%%%%%%%%
+\usepackage{amsmath, amsthm, amssymb, braket, color} %%%%%%%%%%%%%%%%
+\usepackage[usenames,dvipsnames]{xcolor} %%%%%%%%%%%%%
+\usepackage{subfig} %For subfigures
+\usepackage[normalem]{ulem} %for striking out text
+\numberwithin{equation}{section} %%%%%%%%%%%%%%%
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 0pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5}     % Uncomment for 1.5 spacing between lines
+\parindent 8pt          % sets leading space for paragraphs
+
+%opening
+\title{Moving the nonlinearity between birth and death.}
+\author{MattheW Badali, Jeremy Rothschild}
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+Skip it for now
+%\end{abstract}
+
+\section{Introduction} \label{Introduction} - MattheW
+[INTRO]
+The application of math to biology has a long history, from Malthus to M\"{u}ller and Pearson, Fisher to Kimura.
+It has been a highly successful endeavor, and blah blah blah
+Deterministic was useful and continues to be
+More recently stochastics have taken the forefront, though there has always been a statistical element to the application of math techniques to biology.
+[ie. history of mathbio]
+
+[Sometimes things go awry]
+%Of course, math and biology do not have a perfect track record.
+%There was the doctor who discovered calculus, or some other typo or misunderstanding that led to a theory being neglected - correlations in bioinformatics being touted as discoveries? Different techniques used for same problem (find examples) - ideally for logistic MTE - realspace vs momentum example
+%Any complex system will be difficult to model, so naturally the math will tend to either be similarly arcane or else inaccurately simplified
+Care must be taken when applying math techniques to biology.
+Even well established tools should not be taken as a black box
+In this paper we regard some common techniques used to solve a stochastic problem
+We also look at how a stochastic problem should be set up, given a deterministic equation as a starting point.
+We will take care in this general class of problems…
+
+Here’s a deterministic equation we’ll regard - and here’s some references wherein it’s used
+“In the susceptible- infective-susceptible model, also called the stochastic logistic model [40–42,44], density dependence operates on births only, Ln = dR0(1 S n/N)and Mn = d.Inthe symmetric logistic model [27,37], density dependence operates on both births and deaths, Ln = dR0(1S n/2N) and Mn = d(1 + R0n/2N). We”
+We will be dealing with stochastic equations that give the deterministic limit
+\begin{equation}
+ \frac{dn}{dt} = r\,n\left(1-\frac{n}{K}\right)
+ \label{logistic}
+\end{equation}
+$r$ is a rate constant, $K$ is a carrying capacity - a phenomenological measure of the system size
+When we go to stochastics, we have some power/liberty/freedom/ambiguity; and with great power, comes great responsibility
+
+We will see this via the measurable quantity, the MTE
+What class of problems? - MTE
+[WHY CALCULATE MTE, $\tau_e$]
+
+1D MTE can be solved, but there are others common ways to solve it
+Exactly solving vs approximations.
+
+“Thesis statement”
+Structure of paper
+
+
+
+
+
+\section{Model} - MattheW
+
+[Deterministic equation]
+with fixed points at $n=0$ (unstable) and $n=K$ (stable).
+To remove the parameter $r$ from our equation the continuous time can be rescaled by $r$.
+Similarly, in the deterministic equation we could rescale $n$ by $K$ to have no parameters.
+However given demographic stochasticity we cannot apply this latter rescaling because we have to respect the inherent scale of $\pm1$ organism for each birth/death event.
+
+[stochastic equation]
+Demographic noise comes from blah, what it does is blah, etc - we have to worry explicitly about births and deaths
+We have to concern ourselves with the probability of being in a state, rather than just BEING
+Consider now the stochastic system with birth
+\begin{equation}
+ b(n) = \Big(\,r + \frac{\delta}{2}\,\Big)n - \frac{q\,r}{K}n^2% = r\,n\left(1-q\,n/K\right)
+\label{birth}
+\end{equation}
+and death
+\begin{equation}
+ d(n) = \frac{\delta}{2}\,n + \frac{(1-q)r}{K} n^2.
+\label{death}
+\end{equation}
+[MENTION RESCALING $\delta$ BY R]
+Note that we've introduced two parameters in our equations \ref{birth} and \ref{death}: $q\in[0,1]$ shifts the nonlinearity between the death term and the birth term whereas the parameter $\delta\in[0,\infty)$ establishes a scale for the contribution of linear terms in both the birth and death rates.
+In this formulation we can vary the strength of the density-dependence in the per capita death and birth rates by the factor $q$.
+It can be readily checked that $b(n)-d(n)$ gives us the expression on the right-hand side of equation \ref{logistic} where, as per design, the new parameters $q$ and $\delta$ do not appear.
+
+[WHY we’re doing quadratic - WHY mathematically and how is relevant biologically]
+In particular, the solution of linear (constant per capita) birth and death is well-known.
+%, as probably is the case with constant birth/death (immigration/emigration) or any combination of these two. [find examples]
+The next simplest case would be to incorporate a quadratic term into the birth and/or the death: this gives us the logistic equation.
+AND briefly biological meaning/motivation - delta is blah blah blah
+
+[cutoff]
+%However we will show that, although they are not explicitly expressed in the deterministic equation \ref{logistic}, the parameters $\delta$ and $q$ affect the quantitative value of the mean time to extinction.
+%To get an intuitive sense of how that could be the case, consider the fact that non-linear birth rates introduce a natural upper bound to our population size, as $b(n)<0$ is a non-biological phenomenon of our mathematical model.
+This limits the population to a maximal size $N = \lceil n_{max}\rceil$, where $n_{max}$ is defined as the population size such that $b(n_{max})=0$.
+From equation \ref{birth} we find that
+\begin{equation}
+n_{max} = \frac{K}{q}\Big(\,1 + \frac{\delta}{2}\,\Big).
+\label{maxN}
+\end{equation}
+Therefore we limit our calculations to the biologically relevant range $n\in[0,N]$ and, for completeness to our study, we can readily check that for our range of parameters $N\geq K$. Already we can see that these ``hidden" parameters have an effect on the model as different values of $\delta$ and $q$ will naturally define a range of states accessible in the model. Note that the death as defined previously does not imply any necessary subtle manipulation of the population range since the death rate is always positive (except at $n=0$) in the range of $q$ and $\delta$ described earlier. The lower bound of the population range for all models is at our stable fixed point representing an extinct species $n=0$.
+
+
+
+
+/section{(exact conditional) PDF} - Jeremy
+
+Explain the relevance and what it does
+Define P_n
+What variance is and why we care
+Ultimately the s.s. is zero, so we define P_n^c
+After initial transient, it goes to some steady P^c_n
+
+Explain the algo - intuition and algo itself
+Step 1 cut a hole in a box
+Step 2 etc
+
+Here be figures
+Notice that: increasing q increases variance (or w/ever), decreasing delta does too!
+\begin{figure}[ht!]
+  \centering
+  \subfloat[\emph{Probability distribution with $q=0.51$ and $K=100$}]{\includegraphics[width=0.5\textwidth]{PDFvsd_K100}\label{qsd:delta}}
+  \hfill
+  \subfloat[\emph{Probability distribution with $\delta=1.0$ and $K=100$}]{\includegraphics[width=0.5\textwidth]{PDFvsq_K100}\label{qsd:q}}
+  \caption{\emph{Probability distribution of the population} The probability distribution functions as found using the quasi-stationary distribution algorithm. The range along the horizontal axis does not fully cover the population but is truncated to show the relevant region of the distribution. In fact each curve has a different range as the parameters $\delta$ and $q$ vary the maximum population size according to equation \ref{maxN}.}
+  \label{qsd}
+\end{figure}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{PDF_q50d99}
+\caption{\emph{Techniques for calculating the quasi-stationary probability distribution} Hello} \label{mte_techn}
+\end{figure}
+
+
+
+
+
+
+
+\section{Exact MTE} - Jeremy
+
+Reminder: ultimately the system goes extinct, probability leaks from the pdf to the absorbing state
+The time this happens in is a random variable, the mean of which is the MTE
+For one-species systems it is possible to solve exactly for the mean time of extinction in standard birth and death processes. The mean time of extinction, when $n=K$, is \cite{Nisbet}
+\begin{equation}
+\tau_e[K] = \frac{1}{d(1)} \sum_{i=1}^K \frac{1}{R(i)} \sum_{j=i}^N T(j)
+\label{analytic_mte}
+\end{equation}
+\textbf{[Is this equivalent to the one we used???]}
+where
+\begin{equation}
+R(n) = \prod_{i=1}^{n-1} \frac{b(i)}{d(i)}
+\end{equation}
+and
+\begin{equation}
+T(n) = \frac{d(1)}{b(n)}R(n+1).
+\end{equation}
+
+Combining equations \ref{birth} and \ref{death} with the solution for the mean time to extinction \ref{analytic_mte} we obtain a complicated analytical expression in the form of a hypergeometric sum. The numerical results of this finite sum are summarized in Figure \ref{mteCP}.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{MTE_QvsD_K100_100}\cite{name2001}
+\caption{\emph{Mean time to extinction with nonlinearity shared between the death and birth rates} The contour plot depicts the mean time to extinction as a function of the parameters $q$ and $\delta$. Recall that for $q=0$ the nonlinearity is purely in the death rate and conversely $q=1$ represents nonlinearity appearing only in the birth rate.} \label{mteCP}
+\end{figure}
+The MTE has a clear dependence on the values of parameters that appear in the births and deaths but do not appear in the deterministic equation. Increasing $\delta$ causes $\tau_e$ to decrease whereas increasing $q$ has the effect of increasing $\tau_e$. Note however that this increase as a function of $q$ is sharper for smaller values of $\delta$ and slower for larger values of $\delta$.
+
+We can synonymously describe these phenomena in the language of population dynamics: increasing the scaling of the linear terms in birth and death rates has a tendency to decrease $\tau_e$. On the other hand, shifting the nonlinearity from the death to the birth rate causes an increase in $\tau_e$.
+\begin{figure}[ht!]
+  \centering
+  \subfloat[\emph{Varying $\delta$}]{\includegraphics[width=0.5\textwidth]{MTEvsd_K100}\label{mte:delta}}
+  \hfill
+  \subfloat[\emph{Varying $q$} ]{\includegraphics[width=0.5\textwidth]{MTEvsq_K100}\label{mte:q}}
+  \caption{\emph{Mean time to extinction for varying $\delta$ and $q$} Each line represents a slice in Figure \ref{mteCP}: Figure \ref{mte:delta} are vertical slices which show how, for different values of $q$, the $\delta$ affects $\tau_e$. Similarly Figure \ref{mte:q} are horizontal slices which show how, for different values of $\delta$, the $q$ affects $\tau_e$.}
+  \label{mte}
+\end{figure}
+
+
+
+
+/section{Approximations} - Both
+
+[Why we need approximations if we have the exact solution.] - Jeremy
+For a one-species model of single birth and death processes the mean time to extinction has been solved for exactly and it is possible to write down a closed form solution for $\tau_e$ given expressions for the birth and death rates. However finding a general solution for the mean time to extinction given multiple populations is not as trivial. Models of stochastic processes away from fixed points are difficult to study mathematically and consequently many approximations have been developed to study these out of equilibrium processes. These approximations simplify our calculations and often reduce the computing runtime significantly, therefore it is important to know which ones to use and when. Unfortunately the regime of parameter space in which each approximation is valid is not very well understood. Some insight can be gained from evaluating these approximations in situations that are solvable and thus we will present some of these techniques before discussing the exact solution to our stochastic model.
+
+
+
+
+describe?
+Mention here?
+eq’ns
+paragraph
+notes
+appendix
+1D sum
+
+
+NO
+No
+
+
+
+
+
+
+
+
+Eigenvalue method
+
+
+No
+
+
+No - for now
+
+
+
+
+Same as tau 1 sum?
+
+
+Tau 1 sum
+yes
+yes
+
+
+A
+
+
+
+
+1D analytic
+(tau1 gives hypergeometric)
+no
+no
+
+
+
+
+MattheW try this again
+
+
+QSD algo -> MTE
+
+
+yes
+yes
+1/d1P1
+B
+Just to find MTE
+
+
+Small n
+
+
+yes
+yes
+Eq’n possibly if it exists
+C
+MattheW: But how tho
+if
+FP full
+
+
+yes
+yes
+
+
+D
+
+
+yes
+FP gaussian
+
+
+yes
+yes
+Ref 1/d1P1
+And eq’n
+D
+
+
+yes
+FP approx pdf -> MTE
+
+
+Yes for pdf, no for tau
+yes
+
+
+D
+
+
+
+
+FP WKB
+no
+briefly
+
+
+E
+
+
+yes
+WKB real
+
+
+yes
+yes
+Ref 1/d1P1
+And eq’n
+E
+
+
+yes
+WKB generating
+no
+briefly
+
+
+E
+
+
+
+
+
+
+D - MattheW
+...this gives pdf
+
+E - Jeremy
+… this too gives pdf
+
+C - MattheW
+
+[PDFs can be approximated, as explained earlier] - Jeremy
+Additionally, certain approximation methods permit the calculation of a quasi-stationary distribution. Probability distributions are incredibly powerful in mathematics, defining the state of the system and allowing the study of its many dynamics. Hence, a method that can consistently obtain the correct distribution is a powerful tool.
+[FIGURE]
+[Comment]
+
+B - Jeremy
+Probability leaks from P_1 to the absorbing state
+The flux of this is given by d1P1
+Hence tau ~ 1/d1P1
+This same equation can be applied to D, E since we have the pdfs
+
+A - Jeremy
+We can take just the first term of the sum, just the tau1 portion
+This is faster
+This ends up being a fine approximation - don’t see figure
+
+Results of the tau_e approximations presented above - Jeremy
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{MTEvsK_q50d99}
+\caption{\emph{Techniques for calculating the mean time to extinction} Plotted as a function of the carrying capacity, a comparison of the different techniques reveals the ranges for which they are more accurate for approximating $\tau_{e}$. Their likeness to the exact solution, the 1D Sum, assesses in what regime they are most suitable.} \label{mte_techn}
+\end{figure}
+[Comment]
+
+
+
+
+
+
+
+
+
+\section{Discussion} - both
+
+Consider a low birth low death organism vs high high - this is delta - Jeremy
+And q is whether competition the slowing the birth rate or explicitly killing dudes
+Linear birth death: birth beta, death mu
+Extinction probability E = (beta/mu)^n0
+Conditional extinction time: MTE propto exp{(beta-mu) t}
+And this is why delta is important
+
+[PDF and MTE discussions] - Jeremy
+(eg two-parameter effects)
+
+Cutoff doesn’t matter
+
+[Approximations] - MattheW
+Fit to e^K? asymptotics?
+Jeremy - Tau vs K for high/low and low/high and low/low and high/high q and delta  - to check if/whether there’s a regime that certain approximations work better
+
+
+%[NOT SURE HOW TO FORMULATE THSI PART/CAN WE SAY THIS? ASSUMING RATES DON"T CHANGE TOO MUCH?]
+%Assuming the distribution of states does not vary drastically, a very loose and yet intuitive understanding of the variance in the mean time to extinction can be obtained by studying the behaviour of the maximum population size. As the number of possible states of the system increases, the more paths to extinction exist and it would take on average longer for a population to become extinct. Thus a qualitative description of the mean time to extinction can be inferred from the maximal population, equation \ref{maxN}. We find that by decreasing
+
+
+
+
+
+\section{Conclusion} - MattheW
+[SEPARATE  FROM DISCUSSION?]
+Just rehash everything with a killer outro
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\section{PREVIOUSLY: Stochastics}
+Consider the stochastic system with birth
+\begin{equation}
+ b(n) = r\,n - q\,r\,n^2/K = r\,n\left(1-q\,n/K\right)
+\end{equation}
+and death
+\begin{equation}
+ d(n) = (1-q)r\,n^2/K.
+\end{equation}
+When $q=0$ I have the system I've already done some research on.
+In general, $q\in[0,1)$ is a parameter that shifts the nonlinearity between the death term and the birth term.
+Note that, in order to interpret there quantities as rates per infinitesimal time of Poisson processes, or alternately to interpret these are probabilities, both of which are standard characterizations, the quantities must remain positive.
+This leads to some funny business where your birth rate has to be piecewise or else $K/q$ has to be chosen such that it is an integer, leading to a finite domain of integers between $0$ and $K/q$ inclusively ($n\in[0,K/q]|n\in\mathbb{Z}$).
+
+Solving the backward equation can be done iteratively to get
+\begin{equation} \label{etime-approx0}
+ \tau_e[n_0] = \sum_{i=1}^{\infty}q_i + \sum_{j=1}^{n_0-1} S_j\sum_{i=j+1}^{\infty}q_i,
+\end{equation}
+where
+\begin{equation}
+ q_i = \frac{b(i-1)\cdots b(1)}{d(i)d(i-1)\cdots d(1)}
+\end{equation}
+and
+\begin{equation}
+ S_i = \frac{d(i)\cdots d(1)}{b(i)\cdots b(1)}.
+\end{equation}
+Again, note that these sums should not go to infinity if the state space is constrained to be finite.
+This can be done, which results in some hypergeometricPFQ functions (according to Mathematica).
+Figure \ref{tauvK} shows the results.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{single-logistic-tauvK}
+\caption{\emph{Mean time to extinction with the nonlinearity shared between the death and birth rates.}  The red line shows the result when the nonlinearity is purely in the death term.  The blue lines show the shared nonlinearity, with $q$ going from $0.1$ to $0.9$ giving increasing extinction times.  The green lines correspond to a similar model done by Assaf and Meerson (2009) that I have not yet recovered the citation for.  The cyan line is the Moran result (linear in $K$), for reference.  } \label{tauvK}
+\end{figure}
+
+Assaf and Meerson (2009) apparently did something similar, though I cannot find that paper at the moment.
+All I have is my interpretation of their results.
+Apparently they have a birth rate something like $b(n)=r\,A\,n + r\,B\,n^2/K$ and a death rate like $d(n)=r\,C\,n + r\,D\,n^2/K$ such that it recovers the appropriate deterministic DE.
+
+These results shown in figure \ref{tauvK} should be a little disconcerting.
+They suggest that similar models, ones that give the same deterministic equation, can give very different extinction times.
+They are not qualitatively different, in that they are all dominated by their exponential term.
+However, the prefactor of the exponential depends on $q$, and since the scales in biology are typically large ($K\gg1$) this corresponds to drastically different expected mean extinction times.
+
+
+\section{WKB}
+to come:  you can do a similar breakdown using the WKB method of Meerson et al, and come to similar results
+
+
+\section{References}
+to come: one textbook, one Assaf/Meerson, and one other paper
+
+
+\end{document}
