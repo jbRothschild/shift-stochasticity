@@ -17,7 +17,7 @@ PDF.append(ss.pdfFP_gaussian(population, stochasticity[sto], cap[K], variability
 #WKB REALSPACE
 PDF.append(ss.distributionWKB_RS(population, cap[K], stochasticity[sto], cap[K], maximum, variability[var]))
 #QSD ALGORITHM
-PDF.append(ss.statDistributionAlgo(cap[K], stochasticity[sto], cap[K], maximum, variability[var], 10))
+PDF.append(ss.statDistributionAlgo(population, stochasticity[sto], cap[K], variability[var]))
 
 for i in range(0,len(PDF)):
     ax.plot(population, PDF[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[i])

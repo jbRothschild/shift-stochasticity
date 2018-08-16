@@ -394,7 +394,7 @@ def distributionWKB_MS(n, fixPoints, stoch, cap, N, delta):
 
 #------------Algorithm----------------
 
-def statDistributionAlgo(fixedPoints, stoch, cap, N, delta, std=10):
+def statDistributionAlgo(population, stoch, cap, delta, std=10):
     """
     Algorithm that calculates the quasistationary conditional probability distribution function
 
@@ -407,7 +407,8 @@ def statDistributionAlgo(fixedPoints, stoch, cap, N, delta, std=10):
     Returns:
         The quasistationary conditional probability distribution function
     """
-    popDist = np.asarray([gaussian(n, cap, std) for n in range(0,N+1)])
+    N = np.max(population)
+    popDist = np.asarray([gaussian(n, cap, ) for n in range(0,N+1)])
     birthArray = np.asarray([birthrate(n, delta, stoch, cap) for n in range(0,N+1)])
     deathArray = np.asarray([deathrate(n, delta, stoch, cap) for n in range(0,N+1)])
 
@@ -455,15 +456,15 @@ def quasiStatDist(fixedPoints, stoch, cap, N, delta, std=10):
 
     if np.size(stoch)>1:
         for i, stoch_i in enumerate(stoch):
-            dist = statDistributionAlgo(cap, stoch_i, cap, maxPop(cap, stoch_i, delta), delta, std)
+            dist = statDistributionAlgo(maxPop(cap, stoch_i, delta), stoch_i, cap, delta, std)
             dist1 = np.append(dist1,dist[1])
     elif np.size(cap)>1:
         for i, cap_i in enumerate(cap):
-            dist = statDistributionAlgo(cap_i, stoch, cap_i, maxPop(cap_i, stoch, delta), delta, std)
+            dist = statDistributionAlgo(maxPop(cap_i, stoch, delta), stoch, cap_i, delta, std)
             dist1 = np.append(dist1,dist[1])
     elif np.size(delta)>1:
         for i, delta_i in enumerate(delta):
-            dist = statDistributionAlgo(cap, stoch, cap, maxPop(cap, stoch, delta_i), delta_i, std)
+            dist = statDistributionAlgo(maxPop(cap, stoch, delta_i), stoch, cap, delta_i, std)
             dist1 = np.append(dist1,dist[1])
 
     return dist1
@@ -519,12 +520,12 @@ def main():
     pdfLegend = []
 
     maximum = maxPop(cap[K], stochasticity[sto], variability[var])
-    statDistributionAlgo(cap[K], stochasticity[sto], cap[K], maxPop(cap[K],stochasticity[sto],variability[var]), variability[var], std=10)
+    statDistributionAlgo(maxPop(cap[K],stochasticity[sto],variability[var]), stochasticity[sto], cap[K], variability[var], std=10)
     """"
     POP = []
     for i, maxi in enumerate([int(x) for x in range(K,maximum,10)]):
         POP.append(np.linspace(1,maxi,maxi))
-        PDF.append(statDistributionAlgo(cap[K], stochasticity[sto], cap[K], maxi, variability[var], std=10))
+        PDF.append(statDistributionAlgo(maxi, stochasticity[sto], cap[K], variability[var], std=10))
         pdfLegend.append(str(maxi))
 
     pp.plot1D(POP[0], PDF[0], title=r"Probability Distribution Function with $q=$"+str(stochasticity[sto])+r", $\delta=$ "+str(variability[var])+r" and $K=$"+str(cap[K]), xlab=r"Population", ylab=r"Probability")
