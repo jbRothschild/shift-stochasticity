@@ -3,11 +3,11 @@ import shiftStochasticity as ss
 
 def mean_var(probability_function, stochasticity, variability, cap):
 
-    mean = np.zeros((stochasticity.shape[0], variability.shape[0]))
-    variance = np.zeros((stochasticity.shape[0], variability.shape[0]))
+    mean = np.zeros((variability.shape[0], stochasticity.shape[0]))
+    variance = np.zeros((variability.shape[0], stochasticity.shape[0],))
 
-    for i, stoch in enumerate(stochasticity):
-        for j, delta in enumerate(variability):
+    for i, stoch in enumerate(variability):
+        for j, delta in enumerate(stochasticity):
             maxSum = ss.maxPop(cap, stoch, delta)
             n = np.arange(1, maxSum).astype(float)
             pdf = probability_function(n, stoch, cap, delta)

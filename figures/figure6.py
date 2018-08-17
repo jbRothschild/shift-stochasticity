@@ -15,14 +15,12 @@ var = np.load("../data/heat_exact_var.npy")
 
 var[var < 0] = 0 #Funky stuff happens, sometimes it's negative???
 mean[mean < 0] = 0
-print np.asarray(mean).shape
-print stochasticity.shape
 #------------------------------ A (MEAN)------------------------------
 
 fig, ax  = lp.newfig(0.6)
 
-cax = ax.contourf(stochasticity, variability, np.asarray(mean).T, cmap=plt.cm.inferno, levels=100)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
-cbar = fig.colorbar(cax, ticks=[np.min(mean), capacity, np.max(mean)])
+cax = ax.contourf(stochasticity, variability, mean.transpose(),100, cmap=plt.cm.inferno)#, levels=25)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
+cbar = fig.colorbar(cax, ticks=[np.min(mean), (np.max(mean)-np.min(mean))/2., np.max(mean)])
 for c in ax.collections:
     c.set_edgecolor("face")
 cbar.ax.set_ylabel(r'Population mean')
@@ -40,7 +38,7 @@ fig, ax  = lp.newfig(0.6)
 var = np.load("../data/heat_exact_var.npy")
 var[var < 0] = 0
 
-cax = ax.contourf(stochasticity, variability, np.asarray(var), cmap=plt.cm.inferno, levels=100)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
+cax = ax.contourf(stochasticity, variability, var.transpose(),100, cmap=plt.cm.inferno)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
 cbar = fig.colorbar(cax, ticks=[np.min(var), (np.max(var)-np.min(var))/2., np.max(var)])
 for c in ax.collections:
     c.set_edgecolor("face")

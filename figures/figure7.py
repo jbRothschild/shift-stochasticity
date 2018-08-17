@@ -3,14 +3,17 @@ from fig_variables import *
 import sys
 sys.path.insert(0, '../mte')
 import comparaison as comp
-import shiftStochasticity as ss
+cimport shiftStochasticity as ss
 
 from matplotlib.colors import LogNorm #color in log the maps
 
-exact_mean = np.load("../data/heat_exact_mean.npy")D
-exact_var = np.load("../data/heat_exact_var.npy")
-exact_var[exact_var < 0] = 0.01 #funky stuff at mean and var
-exact_mean[exact_mean < 0] = 0.01
+exac_mean = np.load("../data/heat_exact_mean.npy")
+exac_var = np.load("../data/heat_exact_var.npy")
+exac_var[exac_var < 0] = 0.01 #funky stuff at mean and var
+exac_mean[exac_mean < 0] = 0.01
+
+exact_mean = exac_mean.transpose() #made a mistake and for now the saved file is weird. need to change.
+exact_var = exac_var.transpose()
 
 #FP QSD
 #PDF.append(ss.pdfFP_full_normalized(population, stochasticity[sto], cap[K], variability[var]))
@@ -37,8 +40,8 @@ FPQSD_mean[FPQSD_mean < 0] = 0.01
 
 fig, ax  = lp.newfig(0.6)
 
-cax = ax.contourf(stochasticity, variability, np.asarray(FPQSD_mean/exact_mean), cmap=plt.cm.inferno, levels=100)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
-cbar = fig.colorbar(cax, ticks=[np.min(FPQSD_mean), 1.0, np.max(FPQSD_mean)])
+cax = ax.contourf(stochasticity, variability, np.asarray(FPQSD_mean/exact_mean), 100, cmap=plt.cm.inferno)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
+cbar = fig.colorbar(cax, ticks=[np.min(FPQSD_mean/exact_mean), 1.0, np.max(FPQSD_mean/exact_mean)])
 for c in ax.collections:
     c.set_edgecolor("face")
 cbar.ax.set_ylabel(r'ratio population FPQSD_mean/exact mean')
@@ -53,8 +56,8 @@ plt.close(fig)
 
 fig, ax  = lp.newfig(0.6)
 
-cax = ax.contourf(stochasticity, variability, np.asarray(FPQSD_vsr), cmap=plt.cm.inferno, levels=100)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
-cbar = fig.colorbar(cax, ticks=[np.min(FPQSD_vsr), (np.max(FPQSD_vsr)-np.min(FPQSD_vsr))/2., np.max(FPQSD_vsr)])
+cax = ax.contourf(stochasticity, variability, np.asarray(FPQSD_var), 100, cmap=plt.cm.inferno)#, levels=100)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
+cbar = fig.colorbar(cax, ticks=[np.min(FPQSD_var/exact_var), 1.0, np.max(FPQSD_var)])
 for c in ax.collections:
     c.set_edgecolor("face")
 cbar.ax.set_ylabel(r'Population FPQSD_variance')
