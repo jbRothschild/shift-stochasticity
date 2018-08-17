@@ -2,13 +2,13 @@ import latex_plots as lp
 from fig_variables import *
 import sys
 sys.path.insert(0, '../mte')
-import comparaison as comp
+import compare_mean_var as comp
 
 from matplotlib.colors import LogNorm #color in log the maps
 
-#mean, var = comp.mean_var(comp.exact_solution, stochasticity, variability, capacity)
-#np.save("../data/heat_exact_mean.npy", mean)
-#np.save("../data/heat_exact_var.npy", var)
+mean, var = comp.mean_var(comp.exact_solution, stochasticity, variability, capacity)
+np.save("../data/heat_exact_mean.npy", mean)
+np.save("../data/heat_exact_var.npy", var)
 
 mean = np.load("../data/heat_exact_mean.npy")
 var = np.load("../data/heat_exact_var.npy")

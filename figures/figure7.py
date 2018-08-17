@@ -2,7 +2,7 @@ import latex_plots as lp
 from fig_variables import *
 import sys
 sys.path.insert(0, '../mte')
-import comparaison as comp
+import compare_mean_var as comp
 cimport shiftStochasticity as ss
 
 from matplotlib.colors import LogNorm #color in log the maps
@@ -41,7 +41,7 @@ FPQSD_mean[FPQSD_mean < 0] = 0.01
 fig, ax  = lp.newfig(0.6)
 
 cax = ax.contourf(stochasticity, variability, np.asarray(FPQSD_mean/exact_mean), 100, cmap=plt.cm.inferno)#, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
-cbar = fig.colorbar(cax, ticks=[np.min(FPQSD_mean/exact_mean), 1.0, np.max(FPQSD_mean/exact_mean)])
+cbar = fig.colorbar(cax, ticks=[np.min(FPQSD_mean/exact_mean), 1.0, np.max(FPQSD_mean/exact_mean)]) #Should we useplt.cm.RdBu
 for c in ax.collections:
     c.set_edgecolor("face")
 cbar.ax.set_ylabel(r'ratio population FPQSD_mean/exact mean')
