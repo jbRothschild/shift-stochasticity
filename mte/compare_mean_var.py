@@ -9,7 +9,7 @@ def mean_var(probability_function, stochasticity, variability, cap):
     for i, stoch in enumerate(variability):
         for j, delta in enumerate(stochasticity):
             maxSum = ss.maxPop(cap, stoch, delta)
-            n = np.arange(1, maxSum).astype(float)
+            n = np.arange(1, maxSum+1).astype(float)
             pdf = probability_function(n, stoch, cap, delta)
             mean[i,j] = np.sum( np.multiply(n, pdf) )
             variance[i,j] = np.sum(np.multiply(n**2, pdf) ) - mean[i,j]**2

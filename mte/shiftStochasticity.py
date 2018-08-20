@@ -46,7 +46,7 @@ def rates(stoch, cap, delta, maxSum):
     if (cap!=1):
         S = np.array([0,deathrate(1, delta, stoch, cap)*birthrate(1, delta, stoch, cap)**(-1)])
 
-    for i in range(2,maxSum):
+    for i in range(2,int(maxSum)+1): #Added plus 1 so that range includes maxSum
         Q = np.append(Q,Q[-1]*birthrate(i-1, delta, stoch, cap)*deathrate(i, delta, stoch, cap)**(-1))
         if i <= cap:
             S = np.append(S,S[-1]*deathrate(i, delta, stoch, cap)*birthrate(i, delta, stoch, cap)**(-1))
