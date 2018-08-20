@@ -320,7 +320,7 @@ def WKB_RS(n, stoch, cap, N, delta):
 
     return action, action1, secDerivAction
 
-def distributionWKB_RS(n, fixPoints, stoch, cap, N, delta):
+def distributionWKB_RS(n, stoch, cap, delta):
     """
     Function that calculates the action according to the equation defined by the WKB approximation: Probability Distribution = constant*exp(-K*S(n)-S_1(n)) where S
 
@@ -333,8 +333,10 @@ def distributionWKB_RS(n, fixPoints, stoch, cap, N, delta):
         delta: The coefficient which determines the stochasticity of the population.
     Returns:
         distribution: The distribution as a function of capacity.
+        distributionWKB_RS(population, cap[K], stochasticity[sto], cap[K], maximum, variability[var]))
     """
-
+    fixPoints = cap
+    N = maxPop(cap, stoch, delta)
     act, act1, secDerivAct = WKB_RS(n, stoch, cap, N, delta)
     actF, act1F, secDerivActF = WKB_RS(fixPoints, stoch, cap, N, delta)
     #constant term in the probability distribution found from WKB

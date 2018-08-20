@@ -1,4 +1,4 @@
-import latex_plots as lp
+#import latex_plots as lp
 from fig_variables import *
 import sys
 sys.path.insert(0, '../mte')
@@ -13,8 +13,7 @@ np.save("../data/heat_exact_var.npy", var)
 mean = np.load("../data/heat_exact_mean.npy")
 var = np.load("../data/heat_exact_var.npy")
 
-var[var < 0] = 0 #Funky stuff happens, sometimes it's negative???
-mean[mean < 0] = 0
+"""
 #------------------------------ A (MEAN)------------------------------
 
 fig, ax  = lp.newfig(0.6)
@@ -49,3 +48,4 @@ ax.set_yscale("log")
 ax.minorticks_off()
 lp.savefig("Figure6-B")
 plt.close(fig)
+"""
