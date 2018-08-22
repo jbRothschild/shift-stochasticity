@@ -185,11 +185,12 @@ def pdfFP_full(x, stoch, cap, delta): #MAB
 #    return np.exp(-2*x/(1-2*stoch))*(1/x)*((x*(1-2*stoch)+cap*(1+delta))**(1+(2*cap*(2+delta-2*stoch))/(1-2*stoch)**2))/temp
     return np.exp(-2*x/(1-2*stoch)+2*cap/(1-2*stoch))*(cap/x)*(((x*(1-2*stoch)+cap*(1+delta))/((cap*(1-2*stoch)+cap*(1+delta))))**(1+(2*cap*(2+delta-2*stoch))/(1-2*stoch)**2))
 
-def normalization_constant(stoch, cap, delta):
-    return inte.quad(lambda x: pdfFP_full(x,stoch,cap,delta), 0, 2.*cap)[0]
+def normalization_constant(x,stoch, cap, delta):
+    return sum(pdfFP_full(x, stoch, cap, delta))
+    #return inte.quad(lambda x: pdfFP_full(x,stoch,cap,delta), 0, 2.*cap)[0]
 
 def pdfFP_full_normalized_dislikesarrays(x, stoch, cap, delta):
-    return pdfFP_full(x, stoch, cap, delta)/normalization_constant(stoch,cap,delta)
+    return pdfFP_full(x, stoch, cap, delta)/normalization_constant(x,stoch,cap,delta)
 
 def pdfFP_full_normalized(x, stoch, cap, delta):
     pdf = []

@@ -18,5 +18,4 @@ module load anaconda2/5.1.0
 export OMP_NUM_THREADS=40
 
 # Commands to be run now
-make fig6 && echo "Done calculating mean and variance for exact"
 make fig7 && echo "All done calculating mean and variance of techniques"
