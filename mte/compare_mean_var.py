@@ -13,6 +13,7 @@ def mean_var(probability_function, stochasticity, variability, cap):
             pdf = probability_function(n, stoch, cap, delta)
             mean[i,j] = np.sum( np.multiply(n, pdf) )
             variance[i,j] = np.sum(np.multiply(n**2, pdf) ) - mean[i,j]**2
+            print "done!"
 
     return mean, variance
 

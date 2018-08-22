@@ -194,8 +194,9 @@ def pdfFP_full_normalized_dislikesarrays(x, stoch, cap, delta):
 
 def pdfFP_full_normalized(x, stoch, cap, delta):
     pdf = []
+    Norm = normalization_constant(x, stoch,cap,delta)
     for i, n in enumerate(x):
-        pdf.append(pdfFP_full(n,stoch,cap,delta)/normalization_constant(stoch,cap,delta))
+        pdf.append(pdfFP_full(n,stoch,cap,delta)/Norm)
     return np.asarray(pdf)
 
 def mte_from_FPpdf_dislikesarrays(fixedPoints, stoch, cap, N, delta): #MAB
