@@ -17,12 +17,12 @@ Such stochasticity is termed demographic noise.
 Instead of a birth rate $b_n$ we assume that each birth event is independent and distributed exponentially with a probability $b_n\,dt$ of occuring in each infinitesimal time interval $dt$, and this is similarly assumed for death events. %too technical? Or esoteric?
 In this paper we use the birth rate
 \begin{equation}
- b_n = \Big(1 + \frac{\delta}{2}\Big)\,r\,n - \frac{q\,r}{K}n^2% = r\,n\left(1+\frac{\delta}{2}-q\,n/K\right)
+ b_n = \Big(1 + \delta\Big)\,r\,n - \frac{q\,r}{K}n^2% = r\,n\left(1+\delta-q\,n/K\right)
 \label{birth}
 \end{equation}
 and death rate
 \begin{equation}
- d_n = \frac{\delta}{2}\,r\,n + \frac{(1-q)r}{K} n^2 = r\,n\left(\frac{\delta}{2}+(1-q)\,n/K\right).
+ d_n = \delta\,r\,n + \frac{(1-q)r}{K} n^2 = r\,n\left(\delta+(1-q)\,n/K\right).
 \label{death}
 \end{equation}
 Note that we introduce two new parameters in our equations \ref{birth} and \ref{death}: $q\in[0,1]$ shifts the nonlinearity between the death term and the birth term whereas the parameter $\delta\in[0,\infty)$ establishes a scale for the contribution of linear terms in both the birth and death rates.
@@ -39,7 +39,7 @@ This is the maximum size the population can achieve, and we define this cutoff a
 %This limits the population to a maximal size $N = \lceil n_{max}\rceil$, where $n_{max}$ is defined as the population size such that $b_{n_{max}}=0$.
 %From equation \ref{birth} we find that
 \begin{equation}
-N = \frac{K}{q}\Big(\,1 + \frac{\delta}{2}\,\Big).
+N = \frac{K}{q}\Big(\,1 + \delta\,\Big).
 \label{maxN}
 \end{equation}
 Therefore we limit our calculations to the biologically relevant range $n\in[0,N]$. % and, for completeness to our study, we can readily check that for our range of parameters $N\geq K$.
