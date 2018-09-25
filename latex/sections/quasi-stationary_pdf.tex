@@ -2,7 +2,7 @@ A probability distribution function is a useful mathematical tool to describe th
 We define $P_n(t)$ as the probability that the population is composed of $n$ organisms at time $t$.
 The evolution of the distribution in our single birth and death process is captured in the master equation
 \begin{equation}
-\frac{dP_n}{dt} =  b(n)P_{n-1}(t) + d(n)P_{n+1}(t) - (b(n)+d(n))P_n(t).
+\frac{dP_n}{dt} =  b_n P_{n-1}(t) + d_n P_{n+1}(t) - (b_n+d_n)P_n(t).
 \label{master-eqn}
 \end{equation}
 Note that ultimately at large times the probability of being at population size $n\neq 0$ decays to zero, as more and more of the probability gets drawn to the absorbing state.
@@ -16,11 +16,11 @@ P_n^c = \frac{P_n}{1-P_0}.
 \end{equation*}
 This dynamics of the distribution are described in a slightly different master equation than equation \ref{master-eqn}:
 \begin{equation}
-\frac{dP_n^c}{dt} =  b(n-1)P_{n-1}^c(t) + d(n+1)P_{n+1}^c(t) - (b(n) + d(n) - P_1^c(t)d(1))P_n^c(t).
+\frac{dP_n^c}{dt} =  b_{n-1}P_{n-1}^c(t) + d_{n+1}P_{n+1}^c(t) - (b_n + d_n - P_1^c(t)d_1)P_n^c(t).
 \label{masters2}
 \end{equation}
 After an initial transient period, this conditional probability will stabilize to some steady $\tilde{P}^c_n$ for which $d\tilde{P}_n^c/dt=0$.
-The steady state of this distribution is referred to as the quasi-stationary distribution (QSD?), not to be confused with the true stationary distribution of the population which is the state where $\tilde{P}_n(t \leftarrow \infty)=\delta_{n,0}$.
+The steady state of this distribution is referred to as the quasi-stationary distribution, not to be confused with the true stationary distribution of the population which is the state where $\tilde{P}_n(t \rightarrow \infty)=\delta_{n,0}$.
 
 One way to obtain the quasi-stationary distribution is to exploit equation \ref{masters2} in an algorithm in which we iteratively calculate the change in the distribution $\Delta P^c_n$ in an arbitrarily small time interval $\Delta t$ until all change in the distribution is negligible \cite{Nisbet1982}.
 %We start with an arbitrary initial distribution $P^c_n(0)$ and calculate the change $\Delta P^c_n$ for each $n$ in an arbitrarily small time interval $\Delta t$.
@@ -33,7 +33,7 @@ We settle for $\Delta P^c_n<\epsilon = 10^{-16}$. %CHECK THIS%Maybe have this in
 
 \begin{figure}[ht!]
   \centering
-  \subfloat[\emph{Probability distribution with $\delta=1.00$ and $K=100$}]{\includegraphics[width=0.5\textwidth]{Figure1-A}\label{qsd:q}}
+  \subfloat[\emph{Probability distribution with $\delta=0.50$ and $K=100$}]{\includegraphics[width=0.5\textwidth]{Figure1-A}\label{qsd:q}}
   \hfill
   \subfloat[\emph{Probability distribution with $q=0.06$ and $K=100$}]{\includegraphics[width=0.5\textwidth]{Figure1-B}\label{qsd:delta}}
   \caption{\emph{Probability distribution of the population} The conditional probability distribution functions as found using the quasi-stationary distribution algorithm. Note that for each curve, the population cutoff $N$ is outside the domain presented here. In \ref{qsd:q} increasing lightness indicates an increase in $q$. Similarly, the lightness increase in \ref{qsd:delta} corresponds to an increase in $\delta$}
