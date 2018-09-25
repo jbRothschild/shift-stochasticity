@@ -4,12 +4,12 @@ from fig_variables import *
 from matplotlib.colors import LogNorm #color in log the maps
 
 fig, ax  = lp.newfig(0.6)
-'''
+
 mte = []
 for i, delta in enumerate(variability):
     mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, delta), delta, "sum1d"))
 np.save("../data/heat_MTE_K100_log.npy", mte)
-'''
+
 MTE2 = np.load("../data/heat_MTE_K100_log.npy")
 if np.isinf(np.log10((np.asarray(MTE2)).min())) or np.isnan(np.log10((np.asarray(MTE2)).min())):
     minimum = 0

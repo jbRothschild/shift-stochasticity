@@ -412,7 +412,7 @@ def statDistributionAlgo(population, stoch, cap, delta, std=10):
         The quasistationary conditional probability distribution function
     """
     N = np.max(population)
-    popDist = np.asarray([gaussian(n, cap, ) for n in range(0,N+1)])
+    popDist = np.asarray([gaussian(n, cap, std) for n in range(0,N+1)])
     birthArray = np.asarray([birthrate(n, delta, stoch, cap) for n in range(0,N+1)])
     deathArray = np.asarray([deathrate(n, delta, stoch, cap) for n in range(0,N+1)])
 

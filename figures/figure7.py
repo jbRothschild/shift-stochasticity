@@ -14,11 +14,11 @@ exact_var = np.load("../data/heat_exact_var.npy")
 
 
 #============================FP QSD=============================
-"""
+
 FPQSD_mean, FPQSD_var = comp.mean_var(ss.pdfFP_full_normalized, stochasticity, variability, capacity)
 np.save("../data/heat_FPQSD_mean.npy", FPQSD_mean)
 np.save("../data/heat_FPQSD_var.npy", FPQSD_var)
-"""
+
 FPQSD_mean = np.load("../data/heat_FPQSD_mean.npy")
 FPQSD_var = np.load("../data/heat_FPQSD_var.npy")
 
