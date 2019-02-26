@@ -473,6 +473,14 @@ def quasiStatDist(fixedPoints, stoch, cap, N, delta, std=10):
 
     return dist1
 
+# exact
+
+def analyticQuasiStationaryPDF(n,delta,stoch,cap):
+
+    return ((1 + delta*cap - stoch)*spsp2.poch(1 - ((1 + delta)*cap)/stoch, -1 + n)*(stoch/(-1 + stoch))**(-1 + n))/(n*(delta*cap + n - n*stoch)*hyp3f2(1, 1, 1 - cap/stoch - (delta*cap)/stoch, 2, -(2/(-1 + stoch)) - (delta*cap)/(-1 + stoch) + (2*stoch)/(-1 + stoch), stoch/(-1 + stoch))*spsp2.poch(1 - (delta*cap)/(-1 + stoch), -1 + n))
+
+# hypergeometric
+
 #--------MTE from distributions--------
 
 def mteDist(fixedPoints, stoch, cap, N, delta, technique="WKB_RS"):
@@ -523,8 +531,24 @@ def main():
     PDF = []
     pdfLegend = []
 
+    pop = np.arange(1,maxPop(cap[K],stochasticity[sto],variability[var]),1)
+
     maximum = maxPop(cap[K], stochasticity[sto], variability[var])
-    statDistributionAlgo(maxPop(cap[K],stochasticity[sto],variability[var]), stochasticity[sto], cap[K], variability[var], std=10)
+    algodist = statDistributionAlgo(maxPop(cap[K],stochasticity[sto],variability[var]), stochasticity[sto], cap[K], variability[var], std=10)
+    q,s = rates(stochasticity[sto], cap[K], variability[var], maxPop(cap[K],stochasticity[sto],variability[var]))
+    dist = q/np.sum(q)
+    #hypdist = analyticQuasiStationaryPDF(pop, variability[var], stochasticity[sto], cap[K])
+
+    print(len(algodist))
+    print(len(dist))
+    #print(len(hypdist))
+
+    plt.figure()
+    plt.plot(algodist, 'c',label='Algo', linewidth=3)
+    plt.plot(dist, 'r--',label='Exact', linewidth=3)
+    plt.plot(algodist, 'b:',label='hypergeometric', linewidth=3)
+    plt.legend(loc=0)
+    plt.show()
     """"
     POP = []
     for i, maxi in enumerate([int(x) for x in range(K,maximum,10)]):

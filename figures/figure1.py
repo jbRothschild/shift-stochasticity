@@ -1,4 +1,4 @@
-import latex_plots as lp
+#import latex_plots as lp
 from fig_variables import *
 
 import seaborn as sns #niceeee colors
@@ -11,7 +11,7 @@ fig, ax  = lp.newfig(0.6)
 pdf = []
 for i, stochas in enumerate(stochasticity_i):
     pdf.append(ss.statDistributionAlgo(cap[K], stochas, cap[K], variability[var], 10))
-    print "1A"
+    print("1A")
 np.save("../data/pdf_stoch.npy", pdf)
 
 PDF = np.load("../data/pdf_stoch.npy")
@@ -37,7 +37,7 @@ fig, ax  = lp.newfig(0.6)
 pdf = []
 for i, varia in enumerate(variability_i):
     pdf.append(ss.statDistributionAlgo(cap[K], stochasticity[sto], cap[K], varia, 10))
-    print "1B"
+    print("1B")
 np.save("../data/pdf_varia.npy", pdf)
 
 PDF = np.load("../data/pdf_varia.npy")
