@@ -164,21 +164,21 @@ To simplify the situation further the birth and death rates can be linearized ab
 Equation \ref{FP} can also be solved directly to give a MTE \cite{Gardiner2004}.
 
 %E - Jeremy
-Another method frequently studied is the WKB approximation \cite{}.
+Another method frequently studied is the WKB approximation \cite{Doering2005,Assaf2006,Kessler2007,Ovaskainen2010,Assaf2016}.
 The WKB method involves approximating the solution to a differential equation with a large parameter (such as $K$) by assuming an exponential solution (an ansatz) of the form
 \begin{equation}
 P_n \backsim e^{K\sum_i \frac{1}{K^i}S_i(n)}.
 \label{ansatz}
 \end{equation}
-Starting again from the masters equation \ref{master-eqn}, one can immediately apply the ansatz in the probability distribution and solve the subsequent differential equations to different orders in $1/K$\cite{Assaf2016,etc}.%careful, Assaf2016 is an arXiv paper
+Starting again from the masters equation \ref{master-eqn}, one can immediately apply the ansatz in the probability distribution and solve the subsequent differential equations to different orders in $1/K$\cite{Assaf2016}.%careful, Assaf2016 is an arXiv paper
 To leading order, only $S_0(n)$ is needed.
 This method is commonly referred to as the real-space WKB approximation, wherein we obtain a solution for the quasi-stationary probability distribution.
-Another method, known as the momentum-space WKB, is to write an evolution equation of the generating function of $P_n$, the conjugate of the master equation, and then apply the exponential ansatz \cite{Generating function stuff}.
+Another method, known as the momentum-space WKB, is to write an evolution equation of the generating function of $P_n$, the conjugate of the master equation, and then apply the exponential ansatz \cite{Assaf2006,Assaf2016}.
 
 %C - MattheW
 Rather than approximating the probability distribution function near the fixed point, a different approximation can be done to estimate the probability distribution function near the absorbing state $n=0$. %this still could be formulated simply as a steady state approximation - see Gardiner p.237
 If the bulk of the probability mass is centered on $K$ then the probability of being close to the absorbing state is small (note that this is similar to the quasi-stationary approximation, since the flux out of the system is proportional to the probability of being at a state close to $0$).
-Furthermore, we assume that the probability distribution function grows rapidly, away from the absorbing state, such that $P_{n+1}\gg P_n$, whereas neighbouring birth and death rates are of the same order \cite{smalln}.
+Furthermore, we assume that the probability distribution function grows rapidly, away from the absorbing state, such that $P_{n+1}\gg P_n$, whereas neighbouring birth and death rates are of the same order \cite{Kessler2007,Assaf2010}.
 Rewriting the master equation \ref{master-eqn} as $\partial_t P_n = \left(b_{n-1} P_{n-1} - b_n P_n \right) + \left(d_{n+1}P_{n+1} - d_n P_n\right)$ we approximate the left hand side as zero and the right hand side as $\left(-b_n P_n \right) + \left( d_{n+1} P_{n+1}\right)$.
 Rearranging this gives $P_n = \frac{b_{n-1}}{d_n}P_{n-1} = \prod_{i=2}^n \frac{b_{i-1}}{d_i} P_{1}$. %make sure it looks nice, like Gardiner
 $P_{1}$ can be found by ensuring the probability is normalized; despite the sum extending beyond the region for which $P_{n+1}\gg P_n$ is valid, the probability distribution generated from this small $n$ approximation is qualitatively reasonable.
@@ -201,7 +201,7 @@ The WKB method appears to be reasonable everywhere, and the FP approximation is 
 It is also possible to obtain the mean time to extinction from these distributions.
 As described earlier, the quasi-stationary probability distribution leaks from $P_n$, a non-extinct population, to $P_0$.
 As we are dealing with a single step process, the only transition from which we can reach the absorbing state is through a death at $P_1$: all population extinctions must go through this sole state.
-The flux of the probability to the absorbing state is thus given by the expression $d(1)P_1$, hence the approximation \cite{textbooks,WKB paper(Assaf2016?)}
+The flux of the probability to the absorbing state is thus given by the expression $d(1)P_1$, hence the approximation \cite{Nisbet1982,Assaf2016}
 \begin{equation}
 \tau_e \approx \frac{1}{d(1)P_1}.
  \label{1overd1P1}
