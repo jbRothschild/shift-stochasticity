@@ -1,19 +1,60 @@
 \begin{thebibliography}{10}
 
+\bibitem{Greenhalgh1990}
+David Greenhalgh.
+\newblock {An epidemic model with a density-dependent death rate}.
+\newblock {\em Math. Med. Biol.}, 7(1):1--26, 1990.
+
+\bibitem{Ovaskainen2010}
+Otso Ovaskainen and Baruch Meerson.
+\newblock {Stochastic models of population extinction}.
+\newblock {\em Trends in Ecology and Evolution}, 25(11):643--652, nov 2010.
+
+\bibitem{Assaf2010}
+Michael Assaf and Baruch Meerson.
+\newblock {Extinction of metastable stochastic populations}.
+\newblock {\em Physical Review E - Statistical, Nonlinear, and Soft Matter
+  Physics}, 81(2):1--19, 2010.
+
+\bibitem{Allen2003}
+Linda J~S Allen.
+\newblock {\em {An Introduction to Stochastic Processes with Applications to
+  Biology}}.
+\newblock Pearson Education, Inc, New Jersey, 2003.
+
+\bibitem{Norden1982}
+R~H Norden.
+\newblock {On the Distribution of the Time to Extinction in the Stochastic
+  Logistic Population-Model}.
+\newblock {\em Adv. Appl. Probab.}, 14(4):687--708, 1982.
+
+\bibitem{Newman2004}
+T~J Newman, Jean-Baptiste Ferdy, and C~Quince.
+\newblock {Extinction times and moment closure in the stochastic logistic
+  process.}
+\newblock {\em Theor. Popul. Biol.}, 65(2):115--126, mar 2004.
+
+\bibitem{Allen2005}
+Edward~J Allen, Linda J~S Allen, and Henri Schurz.
+\newblock {\em {A comparison of persistence-time estimation for discrete and
+  continuous stochastic population models that include demographic and
+  environmental variability.}}, volume 196.
+\newblock jul 2005.
+
+\bibitem{Nasell2001}
+Ingemar N{\aa}sell.
+\newblock {Extinction and quasi-stationarity in the verhulst logistic model}.
+\newblock {\em J. Theor. Biol.}, 211(1):11--27, jul 2001.
+
 \bibitem{Nadell2008}
-Carey~D. Nadell, Joao~B. Xavier, Simon~A. Levin, and Kevin~R. Foster.
+Carey~D Nadell, Joao~B Xavier, Simon~A Levin, and Kevin~R Foster.
 \newblock {The evolution of quorum sensing in bacterial biofilms}.
-\newblock {\em PLoS Biol.}, 6(1):0171--0179, 2008.
+\newblock {\em PLoS Biol.}, 6(1):171--179, 2008.
 
 \bibitem{Vulic2001}
 Marin Vulic and Roberto Kolter.
 \newblock {Evolutionary Cheating in}.
 \newblock {\em Genetics}, (March), 2001.
-
-\bibitem{Greenhalgh1990}
-David Greenhalgh.
-\newblock {An epidemic model with a density-dependent death rate}.
-\newblock {\em Math. Med. Biol.}, 7(1):1--26, 1990.
 
 \bibitem{VanMelderen2009}
 Laurence {Van Melderen} and Manuel~Saavedra {De Bast}.
@@ -24,52 +65,68 @@ Laurence {Van Melderen} and Manuel~Saavedra {De Bast}.
 Daniel~J Rankin, Leighton~a Turner, Jack~a Heinemann, and Sam~P Brown.
 \newblock {The coevolution of toxin and antitoxin genes drives the dynamics of
   bacterial addiction complexes and intragenomic conflict.}
-\newblock {\em Proc. Biol. Sci.}, 279(1743):3706--15, sep 2012.
+\newblock {\em Proc. Biol. Sci.}, 279(1743):3706--3715, sep 2012.
 
 \bibitem{Nisbet1982}
-R.M. Nisbet and W.S.C. Gurney.
+R~M Nisbet and W~S~C Gurney.
 \newblock {\em {Modelling Fluctuating Populations}}.
 \newblock John Wiley {\&} Sons, Toronto, 1982.
 
 \bibitem{Gardiner2004}
-C.W. Gardiner.
+C~W Gardiner.
 \newblock {\em {Handbook of Stochastic Methods}}.
 \newblock Springer, New York, 3 edition, 2004.
 
-\bibitem{Norden1982}
-R~H Norden.
-\newblock {On the Distribution of the Time to Extinction in the Stochastic
-  Logistic Population-Model}.
-\newblock {\em Adv. Appl. Probab.}, 14(4):687--708, 1982.
-
-\bibitem{Nasell2001}
-I~N{\aa}sell.
-\newblock {Extinction and quasi-stationarity in the Verhulst logistic model.}
-\newblock {\em J. Theor. Biol.}, 211(1):11--27, jul 2001.
-
-\bibitem{Ovaskainen2010}
-Otso Ovaskainen and Baruch Meerson.
-\newblock {Stochastic models of population extinction.}
-\newblock {\em Trends Ecol. Evol.}, 25(11):643--52, nov 2010.
-
-\bibitem{Newman2004}
-T~J Newman, Jean-Baptiste Ferdy, and C~Quince.
-\newblock {Extinction times and moment closure in the stochastic logistic
-  process.}
-\newblock {\em Theor. Popul. Biol.}, 65(2):115--26, mar 2004.
-
-\bibitem{Allen2005}
-Edward~J Allen, Linda J~S Allen, and Henri Schurz.
-\newblock {\em {A comparison of persistence-time estimation for discrete and
-  continuous stochastic population models that include demographic and
-  environmental variability.}}, volume 196.
-\newblock jul 2005.
+\bibitem{Rouzine2001}
+I~M Rouzine, A~Rodrigo, and J~M Coffin.
+\newblock {Transition between Stochastic Evolution and Deterministic Evolution
+  in the Presence of Selection: General Theory and Application to Virology}.
+\newblock {\em Microbiol. Mol. Biol. Rev.}, 65(1):151--185, 2001.
 
 \bibitem{Assaf2009}
 Michael Assaf, Alex Kamenev, and Baruch Meerson.
 \newblock {Population extinction risk in the aftermath of a catastrophic
   event}.
-\newblock {\em Phys. Rev. E}, 79(1):011127, jan 2009.
+\newblock {\em Phys. Rev. E}, 79(1):11127, jan 2009.
+
+\bibitem{Hubbell2001}
+S~P Hubbell.
+\newblock {\em {The Unified Theory of Biodiversity and Biogeography}}.
+\newblock 2001.
+
+\bibitem{Adler2010}
+Peter~B Adler, Stephen~P Ellner, and Jonathan~M Levine.
+\newblock {Coexistence of perennial plants: An embarrassment of niches}.
+\newblock {\em Ecol. Lett.}, 13(8):1019--1029, 2010.
+
+\bibitem{Kessler2007}
+David~a. Kessler and Nadav~M. Shnerb.
+\newblock {Extinction Rates for Fluctuation-Induced Metastabilities: A
+  Real-Space WKB Approach}.
+\newblock {\em J. Stat. Phys.}, 127(5):861--886, mar 2007.
+
+\bibitem{Wallace2002}
+A.~Tsoularis and J.~Wallace.
+\newblock {Analysis of logistic growth models}.
+\newblock {\em Mathematical Biosciences}, 179(1):21--55, 2002.
+
+\bibitem{Palamara2013}
+Gian~Marco Palamara, Gustav~W. Delius, Matthew~J. Smith, and Owen~L. Petchey.
+\newblock {Predation effects on mean time to extinction under demographic
+  stochasticity}.
+\newblock {\em Journal of Theoretical Biology}, 334:1--10, 2013.
+
+\bibitem{Doering2005}
+Charles~R Doering, Khachik~V Sargsyan, and Leonard~M Sander.
+\newblock {Extinction times for birth-death processes: exact results, continuum
+  asymptotics, and the failure of the Fokker-Planck approximation}.
+\newblock {\em Multiscale Model. Simul.}, 3(2):283--299, 2005.
+
+\bibitem{Assaf2006}
+Michael Assaf and Baruch Meerson.
+\newblock {Spectral theory of metastability and extinction in birth-death
+  systems}.
+\newblock {\em Phys. Rev. Lett.}, 97(20):1--4, 2006.
 
 \bibitem{Assaf2016}
 Michael Assaf and Baruch Meerson.
@@ -79,12 +136,7 @@ Michael Assaf and Baruch Meerson.
 \bibitem{Chesson2000}
 Peter Chesson.
 \newblock {MECHANISMS OF MAINTENANCE OF SPECIES DIVERSITY}.
-\newblock {\em Annu. Rev. Ecol. Syst}, 31(May):343--66, 2000.
-
-\bibitem{Channell1990}
-Paul~J Channell and Clint Scovel.
-\newblock Symplectic integration of hamiltonian systems.
-\newblock {\em Nonlinearity}, 3(2):231, 1990.
+\newblock {\em Annu. Rev. Ecol. Syst}, 31(May):343--366, 2000.
 
 \bibitem{Lande1993}
 Russell Lande.

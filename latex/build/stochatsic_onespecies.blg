@@ -1,84 +1,146 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: build/stochatsic_onespecies.aux
-White space in argument---line 2 of file build/stochatsic_onespecies.aux
- : \citation{a
- :             million}
-I'm skipping whatever remains of this command
-White space in argument---line 37 of file build/stochatsic_onespecies.aux
- : \citation{paper
- :                 this R}
-I'm skipping whatever remains of this command
-White space in argument---line 38 of file build/stochatsic_onespecies.aux
- : \citation{T
- :             comes from}
-I'm skipping whatever remains of this command
-White space in argument---line 69 of file build/stochatsic_onespecies.aux
- : \citation{Generating
- :                      function stuff}
-I'm skipping whatever remains of this command
-White space in argument---line 72 of file build/stochatsic_onespecies.aux
- : \citation{WKB
- :               paper(Assaf2016?)}
-I'm skipping whatever remains of this command
 The style file: unsrt.bst
 Database file #1: library.bib.bib
-Repeated entry---line 4793 of file library.bib.bib
+Repeated entry---line 8902 of file library.bib.bib
+ : @article{Allen2003
+ :                   ,
+I'm skipping whatever remains of this entry
+Database file #2: paper1-6final.bib.bib
+Repeated entry---line 221 of file paper1-6final.bib.bib
+ : @book{Gardiner2004
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 328 of file paper1-6final.bib.bib
+ : @article{VanMelderen2009
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 641 of file paper1-6final.bib.bib
+ : @article{Assaf2016
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1345 of file paper1-6final.bib.bib
+ : @book{Allen2005
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2144 of file paper1-6final.bib.bib
+ : @book{Nisbet1982
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2151 of file paper1-6final.bib.bib
+ : @article{Ovaskainen2010
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2222 of file paper1-6final.bib.bib
+ : @article{Kessler2007
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2771 of file paper1-6final.bib.bib
+ : @article{Assaf2006
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2839 of file paper1-6final.bib.bib
+ : @article{Doering2005
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2986 of file paper1-6final.bib.bib
  : @article{Assaf2009
  :                   ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "others?"
-Warning--I didn't find a database entry for "Hubbell2001?"
-Warning--I didn't find a database entry for "."
-Warning--I didn't find a database entry for "Nadell1982"
-Warning--I didn't find a database entry for "?"
-Warning--I didn't find a database entry for "etc"
-Warning--I didn't find a database entry for "smalln"
-Warning--I didn't find a database entry for "textbooks"
+Repeated entry---line 3516 of file paper1-6final.bib.bib
+ : @article{Chesson2000
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3700 of file paper1-6final.bib.bib
+ : @article{Nasell2001
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3874 of file paper1-6final.bib.bib
+ : @book{Hubbell2001
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4001 of file paper1-6final.bib.bib
+ : @book{Allen2003
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4510 of file paper1-6final.bib.bib
+ : @article{Rankin2012
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4596 of file paper1-6final.bib.bib
+ : @article{Newman2004
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4819 of file paper1-6final.bib.bib
+ : @article{Norden1982
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5206 of file paper1-6final.bib.bib
+ : @article{Lande1993
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5554 of file paper1-6final.bib.bib
+ : @article{Adler2010
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5982 of file paper1-6final.bib.bib
+ : @article{Assaf2010
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 6082 of file paper1-6final.bib.bib
+ : @article{Assaf2009
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Fujita1953"
+Warning--I didn't find a database entry for "Brock2006"
+Warning--I didn't find a database entry for "Channell1990"
+Warning--I didn't find a database entry for "Kirchman1982"
 Warning--I didn't find a database entry for "Servais1985"
-Warning--there's a number but no volume in Vulic2001
 Warning--can't use both volume and number fields in Allen2005
 Warning--empty publisher in Allen2005
+Warning--there's a number but no volume in Vulic2001
+Warning--empty publisher in Hubbell2001
 Warning--empty journal in Assaf2016
-You've used 17 entries,
+You've used 26 entries,
             1791 wiz_defined-function locations,
-            585 strings with 6242 characters,
-and the built_in function-call counts, 3517 in all, are:
-= -- 319
-> -- 133
+            647 strings with 7836 characters,
+and the built_in function-call counts, 5533 in all, are:
+= -- 511
+> -- 212
 < -- 1
-+ -- 52
-- -- 35
-* -- 268
-:= -- 571
-add.period$ -- 51
-call.type$ -- 17
-change.case$ -- 15
++ -- 82
+- -- 56
+* -- 420
+:= -- 888
+add.period$ -- 78
+call.type$ -- 26
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 153
-empty$ -- 355
-format.name$ -- 35
-if$ -- 758
+cite$ -- 31
+duplicate$ -- 236
+empty$ -- 556
+format.name$ -- 56
+if$ -- 1195
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 20
-newline$ -- 88
-num.names$ -- 17
-pop$ -- 36
+int.to.str$ -- 26
+missing$ -- 31
+newline$ -- 133
+num.names$ -- 26
+pop$ -- 57
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 54
+skip$ -- 82
 stack$ -- 0
-substring$ -- 234
-swap$ -- 18
+substring$ -- 401
+swap$ -- 27
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 37
-width$ -- 19
-write$ -- 187
-(There were 6 error messages)
+warning$ -- 5
+while$ -- 61
+width$ -- 28
+write$ -- 284
+(There were 22 error messages)
