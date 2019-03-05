@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.14)  19 SEP 2018 11:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.19)  5 MAR 2019 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -219,21 +219,22 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count108
 )
-No file stochatsic_onespecies.aux.
+(./stochatsic_onespecies.aux)
 \openout1 = `stochatsic_onespecies.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count109
@@ -306,701 +307,110 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./sections/introduction.tex
-
-Package natbib Warning: Citation `a million' on page 1 undefined on input line 
-2.
-
-
-Package natbib Warning: Citation `Nadell2008' on page 1 undefined on input line
- 3.
-
-
-Package natbib Warning: Citation `Vulic2001' on page 1 undefined on input line 
-3.
-
-
-Package natbib Warning: Citation `Greenhalgh1990' on page 1 undefined on input 
-line 4.
-
-
-Package natbib Warning: Citation `VanMelderen2009' on page 1 undefined on input
- line 4.
-
-
-Package natbib Warning: Citation `Rankin2012' on page 1 undefined on input line
- 4.
-
-
-Package natbib Warning: Citation `Nisbet1982' on page 1 undefined on input line
- 8.
-
-
-Package natbib Warning: Citation `Gardiner2004' on page 1 undefined on input li
-ne 8.
-
-
-Package natbib Warning: Citation `others?' on page 1 undefined on input line 8.
-
-
-
-Package natbib Warning: Citation `Norden1982' on page 1 undefined on input line
- 9.
-
-
-Package natbib Warning: Citation `Nasell2001' on page 1 undefined on input line
- 9.
-
-
-Package natbib Warning: Citation `Ovaskainen2010' on page 1 undefined on input 
-line 11.
-
-
-Package natbib Warning: Citation `Newman2004' on page 1 undefined on input line
- 11.
-
-
-Package natbib Warning: Citation `Allen2005' on page 1 undefined on input line 
-11.
-
-
-Package natbib Warning: Citation `Assaf2009' on page 1 undefined on input line 
-11.
-
-
-Package natbib Warning: Citation `Assaf2009' on page 1 undefined on input line 
-12.
-
-
-Package natbib Warning: Citation `others?' on page 1 undefined on input line 12
-.
-
-
-Package natbib Warning: Citation `Hubbell2001?' on page 1 undefined on input li
-ne 12.
-
-
-Package natbib Warning: Citation `others?' on page 1 undefined on input line 12
-.
-
-
-Package natbib Warning: Citation `.' on page 1 undefined on input line 12.
-
-
-Package natbib Warning: Citation `Newman2004' on page 1 undefined on input line
- 20.
-
-
-Package natbib Warning: Citation `Allen2005' on page 1 undefined on input line 
-20.
-
-
-Package natbib Warning: Citation `Assaf2009' on page 1 undefined on input line 
-20.
-
-
-Package natbib Warning: Citation `Nadell1982' on page 1 undefined on input line
- 30.
-
-
-Package natbib Warning: Citation `others?' on page 1 undefined on input line 30
-.
-
-
-Package natbib Warning: Citation `?' on page 1 undefined on input line 32.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./sections/model.tex
-
-Package natbib Warning: Citation `Nisbet1982' on page 2 undefined on input line
- 2.
-
-
-LaTeX Warning: Reference `logistic' on page 2 undefined on input line 6.
-
-
-LaTeX Warning: Reference `logistic' on page 2 undefined on input line 15.
-
-
-LaTeX Warning: Reference `birth' on page 2 undefined on input line 28.
-
-
-LaTeX Warning: Reference `death' on page 2 undefined on input line 28.
-
-
-LaTeX Warning: Reference `logistic' on page 2 undefined on input line 32.
-
-) [2] (./sections/quasi-stationary_pdf.tex
-
-LaTeX Warning: Reference `master-eqn' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Reference `masters2' on page 3 undefined on input line 25.
-
-
-Package natbib Warning: Citation `Nisbet1982' on page 3 undefined on input line
- 25.
-
-
-! LaTeX Error: File `Figure1-A' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.36 ...th=0.5\textwidth]{Figure1-A}\label{qsd:q}}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (10.86127pt too wide) in paragraph at lines 36--36
-[]\OT1/cmr/m/n/8 (a)
- []
-
-
-Overfull \hbox (20.41257pt too wide) in paragraph at lines 36--36
-|\OT1/cmr/m/it/8 Prob-
- []
-
-
-Overfull \hbox (7.46114pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 a-
- []
-
-
-Overfull \hbox (11.85005pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 bil-
- []
-
-
-Overfull \hbox (9.65561pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 ity
- []
-
-
-Overfull \hbox (13.6056pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 dis-
- []
-
-
-Overfull \hbox (12.17923pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 tri-
- []
-
-
-Overfull \hbox (11.6306pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 bu-
- []
-
-
-Overfull \hbox (14.70284pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 tion
- []
-
-
-Overfull \hbox (15.58061pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 with
- []
-
-
-Overfull \hbox (13.03351pt too wide) in paragraph at lines 36--36
-\OML/cmm/m/it/8 ^^N \OT1/cmr/m/n/8 =
- []
-
-
-Overfull \hbox (15.11133pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/n/8 1\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 00$
- []
-
-
-Overfull \hbox (13.60559pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/it/8 and
- []
-
-
-Overfull \hbox (16.70578pt too wide) in paragraph at lines 36--36
-\OML/cmm/m/it/8 K \OT1/cmr/m/n/8 =
- []
-
-
-Overfull \hbox (12.75018pt too wide) in paragraph at lines 36--36
-\OT1/cmr/m/n/8 100$| 
- []
-
-
-! LaTeX Error: File `Figure1-B' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38 ....5\textwidth]{Figure1-B}\label{qsd:delta}}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (11.3335pt too wide) in paragraph at lines 38--38
-[]\OT1/cmr/m/n/8 (b)
- []
-
-
-Overfull \hbox (20.41257pt too wide) in paragraph at lines 38--38
-|\OT1/cmr/m/it/8 Prob-
- []
-
-
-Overfull \hbox (7.46114pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 a-
- []
-
-
-Overfull \hbox (11.85005pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 bil-
- []
-
-
-Overfull \hbox (9.65561pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 ity
- []
-
-
-Overfull \hbox (13.6056pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 dis-
- []
-
-
-Overfull \hbox (12.17923pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 tri-
- []
-
-
-Overfull \hbox (11.6306pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 bu-
- []
-
-
-Overfull \hbox (14.70284pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 tion
- []
-
-
-Overfull \hbox (15.58061pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 with
- []
-
-
-Overfull \hbox (13.05435pt too wide) in paragraph at lines 38--38
-\OML/cmm/m/it/8 q \OT1/cmr/m/n/8 =
- []
-
-
-Overfull \hbox (15.11133pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 06$
- []
-
-
-Overfull \hbox (13.60559pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/it/8 and
- []
-
-
-Overfull \hbox (16.70578pt too wide) in paragraph at lines 38--38
-\OML/cmm/m/it/8 K \OT1/cmr/m/n/8 =
- []
-
-
-Overfull \hbox (12.75018pt too wide) in paragraph at lines 38--38
-\OT1/cmr/m/n/8 100$| 
- []
-
-
-LaTeX Warning: Reference `qsd:q' on page 3 undefined on input line 39.
-
-
-LaTeX Warning: Reference `qsd:delta' on page 3 undefined on input line 39.
-
-
-LaTeX Warning: Reference `qsd:q' on page 3 undefined on input line 39.
-
-
-LaTeX Warning: Reference `qsd:delta' on page 3 undefined on input line 39.
-
-
-LaTeX Warning: Reference `qsd' on page 3 undefined on input line 44.
-
-) (./sections/mte.tex
-
-Package natbib Warning: Citation `Nisbet1982' on page 3 undefined on input line
- 3.
-
-
-Package natbib Warning: Citation `paper this R' on page 3 undefined on input li
-ne 3.
-
-
-Package natbib Warning: Citation `T comes from' on page 3 undefined on input li
-ne 3.
-
-
-LaTeX Warning: Reference `birth' on page 3 undefined on input line 13.
-
-
-LaTeX Warning: Reference `death' on page 3 undefined on input line 13.
-
-
-LaTeX Warning: Reference `analytic_mte' on page 3 undefined on input line 13.
-
-
-Package natbib Warning: Citation `Ovaskainen2010' on page 3 undefined on input 
-line 17.
-
-
-! LaTeX Error: File `Figure2' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.34 ...ludegraphics[width=0.6\textwidth]{Figure2}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[3]
-
-LaTeX Warning: Reference `mteCP' on page 4 undefined on input line 38.
-
-
-LaTeX Warning: Reference `mte' on page 4 undefined on input line 44.
-
-
-! LaTeX Error: File `Figure3-A' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.48 ....5\textwidth]{Figure3-A}\label{mte:delta}}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (10.86127pt too wide) in paragraph at lines 48--48
-[]\OT1/cmr/m/n/8 (a)
- []
-
-
-Overfull \hbox (20.96535pt too wide) in paragraph at lines 48--48
-|\OT1/cmr/m/it/8 Vary-
- []
-
-
-Overfull \hbox (11.41115pt too wide) in paragraph at lines 48--48
-\OT1/cmr/m/it/8 ing
- []
-
-
-Overfull \hbox (4.06116pt too wide) in paragraph at lines 48--48
-\OML/cmm/m/it/8 ^^N$| 
- []
-
-
-! LaTeX Error: File `Figure3-B' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.50 ...th=0.5\textwidth]{Figure3-B}\label{mte:q}}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (11.3335pt too wide) in paragraph at lines 50--50
-[]\OT1/cmr/m/n/8 (b)
- []
-
-
-Overfull \hbox (20.96535pt too wide) in paragraph at lines 50--50
-|\OT1/cmr/m/it/8 Vary-
- []
-
-
-Overfull \hbox (11.41115pt too wide) in paragraph at lines 50--50
-\OT1/cmr/m/it/8 ing
- []
-
-
-Overfull \hbox (4.082pt too wide) in paragraph at lines 50--50
-\OML/cmm/m/it/8 q$| 
- []
-
-
-LaTeX Warning: Reference `mteCP' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:delta' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:q' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `qsd' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:delta' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:q' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mteCP' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:delta' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:q' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `qsd' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:delta' on page 4 undefined on input line 51.
-
-
-LaTeX Warning: Reference `mte:q' on page 4 undefined on input line 51.
-
-) (./sections/approximations.tex
-
-LaTeX Warning: Reference `master-eqn' on page 4 undefined on input line 154.
-
-[4]
-
-LaTeX Warning: Reference `FP' on page 5 undefined on input line 159.
-
-
-LaTeX Warning: Reference `FP' on page 5 undefined on input line 164.
-
-
-Package natbib Warning: Citation `Gardiner2004' on page 5 undefined on input li
-ne 164.
-
-
-LaTeX Warning: Reference `master-eqn' on page 5 undefined on input line 173.
-
-
-Package natbib Warning: Citation `Assaf2016' on page 5 undefined on input line 
-173.
-
-
-Package natbib Warning: Citation `etc' on page 5 undefined on input line 173.
-
-
-Package natbib Warning: Citation `Generating function stuff' on page 5 undefine
-d on input line 176.
-
-
-Package natbib Warning: Citation `smalln' on page 5 undefined on input line 181
-.
-
-
-LaTeX Warning: Reference `master-eqn' on page 5 undefined on input line 182.
-
-
-! LaTeX Error: File `Figure4' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.188 ...udegraphics[width=0.6\textwidth]{Figure4}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `pdf_techn' on page 5 undefined on input line 196.
-
-
-Package natbib Warning: Citation `textbooks' on page 5 undefined on input line 
-204.
-
-
-Package natbib Warning: Citation `WKB paper(Assaf2016?)' on page 5 undefined on
- input line 204.
-
-[5]
-
-LaTeX Warning: Reference `analytic_mte' on page 6 undefined on input line 212.
-
-
-LaTeX Warning: Reference `mte_techn' on page 6 undefined on input line 221.
-
-
-LaTeX Warning: Reference `analytic_mte' on page 6 undefined on input line 222.
-
-
-! LaTeX Error: File `Figure5' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 ...udegraphics[width=0.6\textwidth]{Figure5}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) (./sections/discussion.tex
-
-Package natbib Warning: Citation `Nisbet1982' on page 6 undefined on input line
- 9.
-
-
-Package natbib Warning: Citation `Nadell2008' on page 6 undefined on input line
- 13.
-
-
-Package natbib Warning: Citation `Vulic2001' on page 6 undefined on input line 
-13.
-
-
-Package natbib Warning: Citation `Greenhalgh1990' on page 6 undefined on input 
-line 14.
-
-
-Package natbib Warning: Citation `VanMelderen2009' on page 6 undefined on input
- line 14.
-
-
-Package natbib Warning: Citation `Rankin2012' on page 6 undefined on input line
- 14.
-
-
-Package natbib Warning: Citation `Chesson2000' on page 6 undefined on input lin
-e 16.
-
-
-Package natbib Warning: Citation `Assaf2016' on page 6 undefined on input line 
-16.
-
-[6]
-
-LaTeX Warning: Reference `MTECP' on page 7 undefined on input line 20.
-
-
-LaTeX Warning: Reference `analytic_mte' on page 7 undefined on input line 20.
-
-
-LaTeX Warning: Reference `analytic_mte' on page 7 undefined on input line 22.
-
-
-LaTeX Warning: Reference `1overd1P1' on page 7 undefined on input line 26.
-
-
-LaTeX Warning: Reference `DFvsd_K100' on page 7 undefined on input line 28.
-
-
-Package natbib Warning: Citation `Channell1990' on page 7 undefined on input li
-ne 38.
-
-
-Package natbib Warning: Citation `Lande1993' on page 7 undefined on input line 
-49.
-
-
-Package natbib Warning: Citation `Servais1985' on page 7 undefined on input lin
-e 59.
-
-
-Package natbib Warning: Citation `Newman2004' on page 7 undefined on input line
- 73.
-
-
-Package natbib Warning: Citation `Allen2005' on page 7 undefined on input line 
-73.
-
-
-Package natbib Warning: Citation `Assaf2009' on page 7 undefined on input line 
-73.
-
+(./sections/abstract.tex
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no ™ in font cmr9!
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no ™ in font cmr9!
+) (./sections/introduction.tex [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./sections/model.tex [2]
+)
+(./sections/quasi-stationary_pdf.tex
+<images/Figure1-A.pdf, id=20, 279.38177pt x 178.79898pt>
+File: images/Figure1-A.pdf Graphic file (type pdf)
+<use images/Figure1-A.pdf>
+Package pdftex.def Info: images/Figure1-A.pdf  used on input line 36.
+(pdftex.def)             Requested size: 236.01555pt x 151.04678pt.
+<images/Figure1-B.pdf, id=21, 279.38177pt x 178.79898pt>
+File: images/Figure1-B.pdf Graphic file (type pdf)
+<use images/Figure1-B.pdf>
+Package pdftex.def Info: images/Figure1-B.pdf  used on input line 38.
+(pdftex.def)             Requested size: 236.01555pt x 151.04678pt.
+) (./sections/mte.tex [3]
+<images/Figure2.pdf, id=26, 277.8952pt x 182.4958pt>
+File: images/Figure2.pdf Graphic file (type pdf)
+<use images/Figure2.pdf>
+Package pdftex.def Info: images/Figure2.pdf  used on input line 39.
+(pdftex.def)             Requested size: 283.22154pt x 186.00401pt.
+<images/Figure3-A.pdf, id=27, 273.58813pt x 182.58313pt>
+File: images/Figure3-A.pdf Graphic file (type pdf)
+<use images/Figure3-A.pdf>
+Package pdftex.def Info: images/Figure3-A.pdf  used on input line 53.
+(pdftex.def)             Requested size: 236.01555pt x 157.51154pt.
+<images/Figure3-B.pdf, id=28, 272.68274pt x 178.88731pt>
+File: images/Figure3-B.pdf Graphic file (type pdf)
+<use images/Figure3-B.pdf>
+Package pdftex.def Info: images/Figure3-B.pdf  used on input line 55.
+(pdftex.def)             Requested size: 236.01555pt x 154.83636pt.
+)
+(./sections/approximations.tex [4 <./images/Figure1-A.pdf> <./images/Figure1-B.
+pdf>] [5 <./images/Figure2.pdf> <./images/Figure3-A.pdf> <./images/Figure3-B.pd
+f>]
+<images/Figure4.pdf, id=166, 279.65176pt x 182.4958pt>
+File: images/Figure4.pdf Graphic file (type pdf)
+<use images/Figure4.pdf>
+Package pdftex.def Info: images/Figure4.pdf  used on input line 188.
+(pdftex.def)             Requested size: 283.22154pt x 184.84003pt.
+ [6]
+<images/Figure5.pdf, id=175, 275.7502pt x 179.1182pt>
+File: images/Figure5.pdf Graphic file (type pdf)
+<use images/Figure5.pdf>
+Package pdftex.def Info: images/Figure5.pdf  used on input line 232.
+(pdftex.def)             Requested size: 283.22154pt x 183.99089pt.
+) (./sections/discussion.tex [7 <./images/Figure4.pdf>] [8 <./images/Figure5.pd
+f>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-[7])
-No file stochatsic_onespecies.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-[8] (./stochatsic_onespecies.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) (./stochatsic_onespecies.bbl [9] [10]) [11]
+(./stochatsic_onespecies.aux) ) 
 Here is how much of TeX's memory you used:
- 4747 strings out of 494880
- 67121 string characters out of 6179601
- 136680 words of memory out of 5000000
- 7953 multiletter control sequences out of 15000+600000
- 12000 words of font info for 47 fonts, out of 8000000 for 9000
+ 4830 strings out of 494880
+ 69414 string characters out of 6179600
+ 137398 words of memory out of 5000000
+ 8043 multiletter control sequences out of 15000+600000
+ 12299 words of font info for 48 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 44i,10n,50p,1402b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msam10.pfb>
-Output written on stochatsic_onespecies.pdf (8 pages, 233216 bytes).
+ 44i,10n,50p,596b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/
+cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb>
+Output written on stochatsic_onespecies.pdf (11 pages, 1005212 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 315 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
