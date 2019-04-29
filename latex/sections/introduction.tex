@@ -1,24 +1,69 @@
+Studying a biological system, we look at a collection of individual organisms as they reproduce and die. 
+What we observe is a sequence of birth and death events, and the time between these events. 
+The probability and ordering of these events is what characterize the dynamics of the system. 
+A population of organisms may grow continuously up to some equilibrium in the ecosystem but it will not stay there indefinitely: biological systems have fluctuations. 
+Depending on the setup, fluctuations can play an important role in the dynamics of the biological system. %or evolution
+%Example - (say, some bacteria in your lungs)
+%Example - (from the environment, or from the randomness inherent in when a death might occur/strike)
+
+\iffalse
+M: When modelling biological systems, there is a qualitative difference between large and small systems, systems with and without fluctuations. There are those that are dominated by `luck’, by a series of death events before a birth or a particularly fecund season before regression to the mean; namely, they are dominated by fluctuations. 
+J: The growth of a population is dependent on the many factors that affect the births and deaths of individuals in the population.
+These probabilistic events contribute to a fluctuating population size, and hence the dynamics of the system are not properly deterministic.
+The magnitude of fluctuations in relation to the population size and growth affect the behaviour of the 
+Given the variability of the .... important to understand the stochastic nature of our biological systems
+M: %What are population dynamics? 
+When we try to do science on biology, we look at a collection of individual organisms as they reproduce and die. Reproduction increases the population, death decreases it. 
+As scientists/biologists we observe a collection of organisms as they reproduce and die. 
+J: %It’s the development of a population of individuals. Describing how a population of organisms/individuals develops in time, grows, fluctuates, dies. How it approaches equilibrium, different states it can be in. It is trying to find a way to predict, understanding the behaviour of the dynamics in different regimes
+
+%stochasticity, it’s important to talk about in population dynamics
+If I place a small number of bacteria in a growth medium at a warm temperature they will grow to high density every time this experiment is performed. %cite?
+If I release a small number of rodents into a field the experiment might proceed as planned or might end prematurely when some predators eat my rodents before they have a chance to colonize. %cite?
+What is different between these two experimental designs? 
+A small number of bacteria means hundreds or thousands, whereas a small number of rodents might be as low as two. 
+Having a larger population helps safeguard against a premature death or two playing a significant effect. 
+For the bacterial growth we also assume the environment is controlled, with a constant temperature and a known medium every time. 
+The rodents in a field might deal with a bout of bad weather or a large litter of foxes in one attempt of the experiment. 
+Depending on the setup, fluctuations can play an important role in the dynamics of the biological system. 
+In either case, these population dynamics can be captured in mathematical models. 
+%new
+\fi
+
+%deterministic vs stochastic and some history
+We use mathematical models to make predictive statements about systems we study. 
+%Mathematics is the tool of choice for modelling populations. 
+%Mathematics and biology have been paired many times and in many ways. %cite? Modelling of populations instead of mathematics and biology
+The oldest works of population dynamics, like those of Lotka and Volterra, have used deterministic differential equations. %cite?
+Deterministic dynamics tell us what might happen on average if a situation occurs many times or without fluctuations. 
+To include fluctuations one must employ stochastic dynamics. %cite?
+In the last century stochastic analysis has become more developed, and its application to allele frequencies in the work of Kimura and others is celebrated. %cite?
+Fluctuations arise from a variety of sources, for instance if reproduction has a chance of being delayed due to overcrowding, or if there happens to be a scarcity of food this season and the population is decimated. %a series of death events before a birth or a particularly fecund season before regression to the mean
+The causes of these fluctuations are mundane and inherently rooted in the biology of the system of interest. 
+%new
+
+%why we do stochastics rather than deterministic
+%Being as deterministic dynamics have a longer history of being applied in a biological context than their stochastic analogues, and as deterministic mathematics are easier to solve, many researchers start with a deterministic approach to their problem of choice. 
+A common choice is to start with a deterministic approach, as it gives a sense of the problem when noise is minimal or negligible, which is often the case. 
+One issue with going from deterministic to stochastic dynamics is that the mapping is not unique; many stochastic problems give the same deterministic limit as noise becomes small. 
+For this reason we argue that the stochastic description should be explicitly chosen and motivated, for any analysis which involves stochastics even in part. 
+%new
+
+%get from stochastics to the particular idea of interacting species for our model
+To justify our argument we shall analyze a variety of models that incorporate intraspecies interactions to varying degree. %new
 %To mathematically curb this infinite growth, and to biologically allow for intraspecies interactions, a non-linear term is required, and a quadratic is the easiest non-linearity to handle.
-Interactions between organisms are incorporated in a mathematical model of population dynamics by introducing a nonlinearity into the birth or death rates \cite{Greenhalgh1990,Ovaskainen2010,Assaf2010,Allen2003,Norden1982,Newman2004,Allen2005,Fujita1953,Nasell2001}. %or, this is the simplest/one way to do so %a million,
+Interactions between organisms are included in a mathematical model of population dynamics by introducing a nonlinearity into the birth or death rates \cite{Greenhalgh1990,Ovaskainen2010,Assaf2010,Allen2003,Norden1982,Newman2004,Allen2005,Fujita1953,Nasell2001}. %or, this is the simplest/one way to do so
+%be more clear about the literature, and the gap thereof!
 Biologically this means the per capita birth rate is reduced by the presence of competitors, for instance if the competitors reduce the resource abundance and growth is slowed \cite{Nadell2008,Vulic2001}. 
 Alternatively, the per capita death rate can be increased by neighbours, perhaps due to secreted factors like toxins or waste products introduced by those neighbours \cite{Greenhalgh1990,VanMelderen2009,Rankin2012}. 
 The biological reality determines how this shows up in a mathematical model that captures the growth and decay of the population. 
 %We include the parameter $\delta$ to account for the stochastic relevance of the absolute values of the per capita birth and death rates, but in the deterministic limit only their difference $r$ affects the dynamics of the system.
 %Parameter $q$ describes where the intraspecies inhibition acts: a high $q$ near unity implies competition for resources and a decreased effective birth rate, whereas a low $q$ near zero reflects more direct conflict, with intraspecies interactions resulting in greater death rates of organisms.
-A typical approach is to use deterministic dynamics, which arise as a large population limit of a stochastic system \cite{Nisbet1982,Gardiner2004,Rouzine2001}. %,others?
+A typical approach is to use deterministic dynamics, which arise as a large population limit of a stochastic system \cite{Nisbet1982,Gardiner2004,Rouzine2001}. %,others? NTS:repetitive
 However, only the difference of the stochastic birth and death rates is observed, so anything that acts to commensurately change both the birth and death rates is undetected \cite{Norden1982,Nasell2001}. 
+A systematic exploration of the effect of these ``hidden’’ parameters has not been undertaken. %People just choose willy-nilly
 
-The deterministic equation we consider is the logistic equation, one of the most common models to describe a biological system \cite{Ovaskainen2010,Newman2004,Allen2005,Assaf2009}.
-It shows up in epidemiology \cite{Assaf2009,Greenhalgh1990}, biodiversity \cite{Hubbell2001,Adler2010,Kessler2007}, and generally as a default for modelling a population that grows to a constant value \cite{Brock2006}. 
-For a population of $n$ individuals, we will be dealing with stochastic equations that give the deterministic limit
-\begin{equation}
- \frac{dn}{dt} = r\,n\left(1-\frac{n}{K}\right),
- \label{logistic}
-\end{equation}
-where $r$ is a rate constant and $K$ is a carrying capacity, a phenomenological measure of the system size.
-Starting from only a deterministic equation there is some freedom to choose the stochastic rates for birth ($b_n$) and death ($d_n$).
-As the choice of birth and death rates contains ambiguity, researchers have leeway in making their decision, resulting in a variety of similar but distinct models \cite{Newman2004,Allen2005,Assaf2009}.
-
+There is a choice to be made when modelling a particular biological system as to how much intraspecies interactions should affect a species’ birth rate, death rate, or both. %new
 The objective of this work is to investigate the impact of this choice on one measurable quantity, the mean time to extinction (MTE).
 The MTE is the mean of the probability distribution of exit times of the system; it gives the timescale on which we expect the species to go extinct.
 Given enough time in a stochastic system, it is increasingly likely that a series of fluctuations, say in birth and death events, will bring the system to an extinction state from which it cannot escape, called an absorbing state. %increasingly likely -> almost sure
@@ -41,3 +86,5 @@ Various common approximation techniques will be investigated and compared to the
 Finally, a discussion of the results will conclude that increasing the birth and death rates commensurately leads to greater population variance and lesser MTEs, and that the choice of model is of critical importance when establishing a system from which to draw conclusions.
 %using a logistic model without justification allows for only the broadest of results to be credible, with most details being vacuous
 
+%In this chapter I will justify my argument in two ways, both of which use the ubiquitous example of the Verhulst, or logistic, model. 
+%Using the metrics of the quasi-stationary probability distribution function (QPDF) and the mean time to extinction (MTE) I will show that the allocation of linear and nonlinear contributors between the birth and death rate has a drastic effect, and I will evaluate the validity of various commonly employed approximation techniques. 
