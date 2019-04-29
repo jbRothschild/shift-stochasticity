@@ -1,11 +1,42 @@
 The simplest model of an isolated population has linear birth and death terms (that is, the per capita birth and death rates are constant).
-This model is a classic but gives the outcome of population explosion with some probability\cite{Nisbet1982}. %it’s not a time, it’s a fraction of the instances
+This model gives the outcome of population explosion with some probability\cite{Nisbet1982}. %it’s not a time, it’s a fraction of the instances
 %, as probably is the case with constant birth/death (immigration/emigration) or any combination of these two. [find examples]
 To mathematically curb this infinite growth, and to biologically allow for intraspecies interactions, a non-linear term is required, and a quadratic is the easiest non-linearity to handle.
-The difference between per capita birth and death gives some rate constant $r$, and this rate constant is inhibited by the density of the population, hence a decrease by $n/K$, giving the desired quadratic term.
-This is exactly the logistic equation \cite{Wallace2002} \ref{logistic}.
+%The difference between per capita birth and death gives some rate constant $r$, and this rate constant is inhibited by the density of the population, hence a decrease by $n/K$, giving the desired quadratic term.
+%This is exactly the logistic equation \cite{Wallace2002} \ref{logistic}. 
+The deterministic equation we consider is the logistic equation, one of the most common models to describe a biological system \cite{Ovaskainen2010,Wallace2002,Newman2004,Allen2005,Assaf2009}.
+It shows up in epidemiology \cite{Assaf2009,Greenhalgh1990}, biodiversity \cite{Hubbell2001,Adler2010,Kessler2007}, and generally as a default for modelling a population that grows to a constant value \cite{Brock2006}. 
+For a population of $n$ individuals, we will be dealing with stochastic equations that give the deterministic limit
+\begin{equation}
+ \frac{dn}{dt} = r\,n\left(1-\frac{n}{K}\right),
+ \label{logistic}
+\end{equation}
+where $r$ is a rate constant and $K$ is a carrying capacity, a phenomenological measure of the system size.
+Starting from only a deterministic equation there is some freedom to choose the stochastic rates for birth ($b_n$) and death ($d_n$).
+As the choice of birth and death rates contains ambiguity, researchers have leeway in making their decision, resulting in a variety of similar but distinct models \cite{Newman2004,Allen2005,Assaf2009}.
+%new/moved
 
-Extinction occurs at $n=0$, an unstable fixed point of the logistic equation, whereas there is a stable fixed point at $n=K$.
+For instance, a bacterial species $x$ could produce and secrete a waste product $w$ that then increases its death rate. 
+The bacterial dynamics are written as
+\begin{equation*}
+\dot{x} = \beta x - \mu x - e w x
+%\dot{x} = \beta x - \mu x - e\, w\, x
+\end{equation*}
+with birth rate $\beta$, natural death rate $\mu$, and an increased death rate proportional to the amount of waste in the system, with proportionality constant $e$, the efficacy of the waste in killing the bacteria. 
+The waste product obeys its own dynamical equation
+\begin{equation*}
+\dot{w} = g x - \lambda w
+\end{equation*}
+with decay rate $\lambda$ and generation rate $g$ from the bacteria. 
+Secreted factors tend to degrade on the order of minutes \cite{Belle2006}, whereas cell division and death occurs over hours \cite{Powell1956,Lenski1991}, hence we can make a separation of timescales argument to assume that the waste product equilibrates more quickly. 
+The dynamics of the secreted factor can be assumed to adiabatically reach a steady state $w^* = g x/\lambda$. 
+Inserting this value into the bacterial dynamics equation gives
+\begin{equation*}
+\dot{x} = \beta x - \mu x - e \left( \frac{g x}{\lambda} \right) x = \big( \beta - \mu \big) x - \frac{e g}{\lambda} x^2.
+\end{equation*}
+This is exactly the logistic equation \ref{logistic}, with rate constant $r = \beta - \mu$ and carrying capacity $K = \left( \beta - \mu \right) \frac{\lambda}{e g}$. 
+
+Extinction in the logistic equation occurs at $n=0$, an unstable fixed point, whereas there is a stable fixed point at $n=K$. %new/modified
 %The logistic equation \ref{logistic} has fixed points at extinction and the carrying capacity, $n=0$ and $n=K$ respectively.
 Common practice in dynamical systems analysis is to rescale variables to remove parameters and simplify the system.
 Since we are dealing with continuous time we can remove the rate constant from our equation; we do so by rescaling the time by $r$.
@@ -32,6 +63,8 @@ Parameter $q$ describes where the intraspecies inhibition acts: a high $q$ near 
 It can be readily checked that $b_n-d_n$ recovers the right-hand side of equation \ref{logistic} where, as per design, the new parameters $q$ and $\delta$ do not appear.
 The choice of these parameters specifies a particular model and has consequences on the MTE.
 %We will find that this choice has consequences on the MTE. %and pdf
+
+%paragraph showing the readily checked stochastic to deterministic transition
 
 The model described above has one other notable feature.
 Except at $q=0$, there is a population at which the competition brings the effective birth rate to zero.
