@@ -1,0 +1,59 @@
+## We probably want to use latex to manage all text layout
+text.usetex : True
+
+## FIGURE
+figure.autolayout : True
+#figure.constrained_layout.use : True # not compatible with autolayout = True
+
+# different figure sizes
+figure.figsize : 7.2, 4.45 # size in inches
+#figure.figsize : 7, 4.3
+#figure.figsize : 6, 3
+#figure.figsize : 7.0, 2.1
+
+savefig.dpi : 300 # Generally 300 is the accepted quality
+
+## FONT
+font.size : 12
+font.family : serif
+font.serif : cm # cm -> Computer modern
+
+## LINES
+
+lines.linewidth : 2.0     # line width in points
+lines.linestyle : -       # solid line
+lines.color : black
+lines.marker : None    # the default marker
+lines.markeredgewidth : 0.0     # the line width around the marker symbol
+lines.markersize : 6.0            # markersize, in points
+
+## AXES
+
+axes.titlesize : 12
+axes.labelsize : 12
+#axes.prop_cycle : cycler('color', ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink', 'brown', 'orange', 'teal', 'coral', 'lightblue', 'lime', 'lavender', 'turquoise', 'darkgreen', 'tan', 'salmon', 'gold', 'darkred', 'darkblue']) # Might want to change the color scheme
+
+## TICKS
+
+xtick.major.size : 4      # major tick size in points
+xtick.minor.size : 2      # minor tick size in points
+xtick.major.width : 1    # major tick width in points
+xtick.minor.width : 1    # minor tick width in points
+xtick.direction : in     # direction: in, out, or inout
+xtick.labelsize : 10
+#xtick.top : False # For some reason this isn't working for me, neither is ytick.right :False (Jeremy)
+
+ytick.major.size : 4      # major tick size in points
+ytick.minor.size : 2      # minor tick size in points
+ytick.major.width : 1    # major tick width in points
+ytick.minor.width : 1    # minor tick width in points
+ytick.major.pad : 6      # distance to major tick label in points
+ytick.direction : in # direction: in, out, or inout
+ytick.labelsize : 10
+#ytick.right : False
+
+
+## LEGEND
+
+legend.fontsize : 11
+legend.loc : best

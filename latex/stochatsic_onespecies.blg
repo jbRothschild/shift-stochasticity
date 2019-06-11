@@ -1,0 +1,157 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: stochatsic_onespecies.aux
+The style file: unsrt.bst
+Database file #1: libraryJ.bib.bib
+Repeated entry---line 8902 of file libraryJ.bib.bib
+ : @article{Allen2003
+ :                   ,
+I'm skipping whatever remains of this entry
+Database file #2: libraryM.bib.bib
+Repeated entry---line 399 of file libraryM.bib.bib
+ : @article{Assaf2010
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 562 of file libraryM.bib.bib
+ : @article{Assaf2009
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 996 of file libraryM.bib.bib
+ : @article{Adler2010
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1213 of file libraryM.bib.bib
+ : @article{Assaf2009
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1235 of file libraryM.bib.bib
+ : @article{Rankin2012
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1419 of file libraryM.bib.bib
+ : @article{Newman2004
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1807 of file libraryM.bib.bib
+ : @article{Nadell2008
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2386 of file libraryM.bib.bib
+ : @article{Assaf2016
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3301 of file libraryM.bib.bib
+ : @article{VanMelderen2009
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3532 of file libraryM.bib.bib
+ : @article{Lande1993
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3617 of file libraryM.bib.bib
+ : @article{Assaf2006
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3727 of file libraryM.bib.bib
+ : @book{Gardiner2004
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3917 of file libraryM.bib.bib
+ : @article{Ovaskainen2010
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4151 of file libraryM.bib.bib
+ : @article{Rouzine2001
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4935 of file libraryM.bib.bib
+ : @article{Vulic2001
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5016 of file libraryM.bib.bib
+ : @book{Hubbell2001
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5496 of file libraryM.bib.bib
+ : @book{Allen2005
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5716 of file libraryM.bib.bib
+ : @article{Greenhalgh1990
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5785 of file libraryM.bib.bib
+ : @article{Nasell2001
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5942 of file libraryM.bib.bib
+ : @article{Chesson2000
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 6012 of file libraryM.bib.bib
+ : @article{Kessler2007
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 6429 of file libraryM.bib.bib
+ : @book{Allen2003
+ :                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 6778 of file libraryM.bib.bib
+ : @article{Doering2005
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 6817 of file libraryM.bib.bib
+ : @article{Norden1982
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 7192 of file libraryM.bib.bib
+ : @book{Nisbet1982
+ :                 ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in Allen2005
+Warning--empty publisher in Allen2005
+Warning--there's a number but no volume in Vulic2001
+Warning--empty publisher in Hubbell2001
+Warning--empty journal in Assaf2016
+You've used 31 entries,
+            1791 wiz_defined-function locations,
+            674 strings with 8538 characters,
+and the built_in function-call counts, 6682 in all, are:
+= -- 619
+> -- 258
+< -- 1
++ -- 99
+- -- 68
+* -- 509
+:= -- 1069
+add.period$ -- 93
+call.type$ -- 31
+change.case$ -- 27
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 282
+empty$ -- 671
+format.name$ -- 68
+if$ -- 1447
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 37
+newline$ -- 158
+num.names$ -- 31
+pop$ -- 66
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 99
+stack$ -- 0
+substring$ -- 497
+swap$ -- 32
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 73
+width$ -- 33
+write$ -- 340
+(There were 26 error messages)

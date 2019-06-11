@@ -21,3 +21,7 @@ def exact_solution(population, stoch,cap, delta):
         q, s = ss.rates(stoch, cap, delta, np.max(population))
         q /= np.sum(q)
         return q
+
+mean, var = mean_var(exact_solution, stochasticity, variability, K )
+np.save("../data/mean_prob_K100.npy", mean)
+np.save("../data/error_prob_K100.npy", var/mean**2)

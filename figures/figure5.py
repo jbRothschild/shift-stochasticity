@@ -1,9 +1,15 @@
-import latex_plots as lp #Necessary for the latex default formatting
+import numpy as np
+import sys, os
+sys.path.append(os.path.abspath('..'))
+import mte.shiftStochasticity as ss
+from fig_variables import stochasticity, K, variability, stochasticity_i, variability_i, cap
 from fig_variables import *
+import fig_variables as fv
+import matplotlib.pyplot as plt
+plt.style.use('parameters.mplstyle')  # particularIMporting
 
 from matplotlib.ticker import LogLocator #log axes
 
-fig, ax  = lp.newfig(0.6)
 
 MTE = []
 
@@ -25,11 +31,16 @@ MTE.append(np.zeros(K+1))
 #EXACT SOLUTION
 MTE.append(ss.mteSum1D(cap, stochasticity[sto], cap, ss.maxPop(cap, stochasticity[sto], variability[var]), variability[var], tech="sum1d"))
 
+
+figname = 'Fig5'
+plt.figure()
+ax = plt.gca()
+
 for i in range(0,len(MTE)):
     if i==3:
-        ax.plot(cap[5:], MTE[i][5:], color=colors_techniques[i], label = techniques[i], linestyle=lines[i])
+        ax.plot(cap[5:], MTE[i][5:], color=colors_techniques[i], label = techniques[i], linestyle=lines[i], lw=2)
     else:
-        ax.plot(cap, MTE[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[i])
+        ax.plot(cap, MTE[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[i], lw=3)
 
 ax.set_xlabel("Carrying capacity, K")
 ax.set_ylabel(r"$\tau_e$")
@@ -40,8 +51,11 @@ ax.minorticks_off()
 #ax.set_xlim(1, 200)
 ax.legend(loc = 'upper left')
 
-lp.savefig("Figure5")
+plt.savefig(DIR_OUTPUT + os.sep + figname + '.pdf', transparent=True)
+plt.savefig(DIR_OUTPUT + os.sep + figname + '.eps')
+plt.close()
 
+"""
 #=======================FIGURE 5ALT==========================
 fig, ax  = lp.newfig(0.6)
 
@@ -80,3 +94,4 @@ ax.minorticks_off()
 ax.legend(loc = 'upper left')
 
 lp.savefig("Figure5_ALT")
+"""

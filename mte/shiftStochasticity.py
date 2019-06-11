@@ -190,7 +190,7 @@ def normalization_constant(x,stoch, cap, delta):
     #return inte.quad(lambda x: pdfFP_full(x,stoch,cap,delta), 0, 2.*cap)[0]
 
 def pdfFP_full_normalized_dislikesarrays(x, stoch, cap, delta):
-    return pdfFP_full(x, stoch, cap, delta)/normalization_constant(x,stoch,cap,delta)
+    return pdfFP_full(x, stoch, cap, delta)/normalization_constant(np.linspace(0,maxPop(cap, stoch, delta),1),stoch,cap,delta)
 
 def pdfFP_full_normalized(x, stoch, cap, delta):
     pdf = []
@@ -497,9 +497,9 @@ def mteDist(fixedPoints, stoch, cap, N, delta, technique="WKB_RS"):
         The Mean Time for extinction
     """
     if technique == "WKB_RS":    #action = (1.0/N)*( n*np.log( deathrate(n, delta, stoch, cap)/birthrate(n, delta, stoch, cap)) + (cap*delta/(2*(1-stoch))) * np.log(cap*(deathrate(n, delta, stoch, cap))/n) + (cap*(1+delta/2)/stoch) * np.log(cap*birthrate(n, delta, stoch, cap))/n)
-        return 1/(deathrate(1, delta, stoch, cap)*distributionWKB_RS(1, fixedPoints, stoch, cap, N, delta))
+        return 1/(deathrate(1, delta, stoch, cap)*distributionWKB_RS(1, stoch, cap, delta))
     elif technique == "WKB_MS":
-        return 1/(deathrate(1, delta, stoch, cap)*distributionWKB_RS(1, fixedPoints, stoch, cap, N, delta))
+        return 1/(deathrate(1, delta, stoch, cap)*distributionWKB_RS(1, stoch, cap, delta))
     elif technique == "cuteAlgo":
         statDist = quasiStatDist(fixedPoints, stoch, cap, N, delta)
         return 1/(deathrate(1, delta, stoch, cap)*statDist)

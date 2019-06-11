@@ -1,9 +1,15 @@
-import latex_plots as lp #Necessary for the latex default formatting
+import numpy as np
+import sys, os
+sys.path.append(os.path.abspath('..'))
+import mte.shiftStochasticity as ss
+from fig_variables import stochasticity, K, variability, stochasticity_i, variability_i, cap
 from fig_variables import *
+import fig_variables as fv
+import matplotlib.pyplot as plt
+plt.style.use('parameters.mplstyle')  # particularIMporting
 
 from matplotlib.ticker import LogLocator #log axes
 
-fig, ax  = lp.newfig(0.6)
 
 maximum = ss.maxPop(cap[K], stochasticity[sto], variability[var])
 population = np.linspace(1,maximum,maximum)
@@ -15,12 +21,18 @@ PDF.append(ss.pdfFP_full_normalized(population, stochasticity[sto], cap[K], vari
 #FP GAUSSIAN
 PDF.append(ss.pdfFP_gaussian(population, stochasticity[sto], cap[K], variability[var]))
 #WKB REALSPACE
-PDF.append(ss.distributionWKB_RS(population, cap[K], stochasticity[sto], cap[K], maximum, variability[var]))
+PDF.append(ss.distributionWKB_RS(population, stochasticity[sto], cap[K], variability[var]))
 #QSD ALGORITHM
 PDF.append(ss.statDistributionAlgo(population, stochasticity[sto], cap[K], variability[var]))
 
+
+
+figname = 'Fig4'
+plt.figure()
+ax = plt.gca()
+
 for i in range(0,len(PDF)):
-    ax.plot(population, PDF[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[i])
+    ax.plot(population, PDF[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[i], lw=3)
 
 ax.set_xlabel("Population")
 ax.set_ylabel("Probability density function")
@@ -31,5 +43,6 @@ ax.minorticks_off()
 ax.set_xlim(1, 200)
 ax.legend(loc = 'lower center')
 
-lp.savefig("Figure4")
-plt.close(fig)
+plt.savefig(DIR_OUTPUT + os.sep + figname + '.pdf', transparent=True)
+plt.savefig(DIR_OUTPUT + os.sep + figname + '.eps')
+plt.close()
