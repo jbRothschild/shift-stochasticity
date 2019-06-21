@@ -1,8 +1,9 @@
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
-import os
-from fig_variables import stochasticity, K, variability
+import os, sys
+sys.path.append(os.path.abspath('..')); import mte.shiftStochasticity as ss
+from fig_variables import stochasticity, K, variability, cap
 import fig_variables as fv
 
 from matplotlib.colors import LogNorm #color in log the maps
@@ -10,11 +11,13 @@ from matplotlib.colors import LogNorm #color in log the maps
 plt.style.use('parameters.mplstyle')  # particularIMporting
 
 mte = []
-"""
-for i, delta in enumerate(variability):
-    mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, delta), delta, "sum1d"))
-np.save("../data/heat_MTE_K100_log.npy", mte)
-"""
+LOAD = True
+
+if not LOAD:
+    for i, delta in enumerate(variability):
+        mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, delta), delta, "sum1d"))
+    np.save("../data/heat_MTE_K100_log.npy", mte)
+
 MTE2 = np.load("../data/heat_MTE_K100_log.npy")
 if np.isinf(np.log10((np.asarray(MTE2)).min())) or np.isnan(np.log10((np.asarray(MTE2)).min())):
     minimum = 0

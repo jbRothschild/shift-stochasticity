@@ -22,7 +22,7 @@ def mean_var(probability_function, stochasticity, variability, cap):
         print "done!" + str(i)
 
     np.save("../data/mean_prob_K100.npy", mean)
-    np.save("../data/error_prob_K100.npy", var)
+    np.save("../data/error_prob_K100.npy", variance)
 
     return 0
 
@@ -31,7 +31,7 @@ def exact_solution(population, stoch, cap, delta):
         q /= np.sum(q)
         return q
 
-#mean, var = mean_var(exact_solution, stochasticity, variability, K )
+#mean_var(exact_solution, stochasticity, variability, K )
 
 mean = np.load("../data/mean_prob_K100.npy")
 error = np.load("../data/error_prob_K100.npy")

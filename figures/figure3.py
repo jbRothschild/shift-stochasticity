@@ -15,13 +15,16 @@ import matplotlib.patches as patches #curved arrows
 
 ratio=0.37 #plot to subplot
 #__________________________A____________________________________
-"""
-mte = []
-for i, stochas in enumerate(stochasticity_i):
-    mte.append(ss.mteSum1D(cap[K], stochas, cap[K], ss.maxPop(cap[K], stochas, variability), variability, "sum1d"))
-    print "3A"
-np.save("../data/delta_vs_mte.npy", mte)
-"""
+LOAD = True
+LOAD_MTE = True
+
+if LOAD:
+    mte = []
+    for i, stochas in enumerate(stochasticity_i):
+        mte.append(ss.mteSum1D(cap[K], stochas, cap[K], ss.maxPop(cap[K], stochas, variability), variability, "sum1d"))
+        print np.size(mte)
+    np.save("../data/delta_vs_mte.npy", mte)
+
 MTE = np.load("../data/delta_vs_mte.npy")
 
 figname = 'Fig3A'
@@ -35,16 +38,18 @@ ax.set_xlabel(r"$\delta$")
 ax.set_ylabel(r"$\tau_e$")
 ax.set_yscale("log")
 ax.set_xscale("log")
+ax.set_xlim([np.min(variability),np.max(variability)])
 ax.get_yaxis().set_major_locator(LogLocator(numticks=5))
 ax.minorticks_off()
 
 #plot within plot
-"""
-mte = []
-for i, delta in enumerate(variability):
-    mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, delta), delta, "sum1d"))
-np.save("../data/heat_MTE_K100_log.npy", mte)
-"""
+
+if LOAD_MTE:
+    mte = []
+    for i, delta in enumerate(variability):
+        mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, delta), delta, "sum1d"))
+    np.save("../data/heat_MTE_K100_log.npy", mte)
+
 MTE2 = np.load("../data/heat_MTE_K100_log.npy")
 if np.isinf(np.log10((np.asarray(MTE2)).min())) or np.isnan(np.log10((np.asarray(MTE2)).min())):
     minimum = 0
@@ -76,13 +81,12 @@ plt.savefig(DIR_OUTPUT + os.sep + figname + '.eps')
 plt.close()
 
 #__________________________B____________________________________
-"""
-mte = []
-for i, varia in enumerate(variability_i):
-    mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, varia), varia, "sum1d"))
-    print "3B"
-np.save("../data/q_vs_mte.npy", mte)
-"""
+if LOAD:
+    mte = []
+    for i, varia in enumerate(variability_i):
+        mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, varia), varia, "sum1d"))
+        print "3B"
+    np.save("../data/q_vs_mte.npy", mte)
 
 MTE = np.load("../data/q_vs_mte.npy")
 
@@ -96,6 +100,7 @@ for i, varia in enumerate(variability_i):
 ax.set_xlabel(r"$q$")
 ax.set_ylabel(r"$\tau_e$")
 ax.set_yscale("log")
+ax.set_xlim([np.min(stochasticity),np.max(stochasticity)])
 ax.get_yaxis().set_major_locator(LogLocator(numticks=5))
 ax.minorticks_off()
 

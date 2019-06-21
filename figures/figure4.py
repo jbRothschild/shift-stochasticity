@@ -16,26 +16,28 @@ population = np.linspace(1,maximum,maximum)
 
 PDF = []
 #ORDER IS VERY IMPORTANT HERE
-#FP QSD
+# FP QSD
 PDF.append(ss.pdfFP_full_normalized(population, stochasticity[sto], cap[K], variability[var]))
-#FP GAUSSIAN
+# FP GAUSSIAN
 PDF.append(ss.pdfFP_gaussian(population, stochasticity[sto], cap[K], variability[var]))
-#WKB REALSPACE
+# WKB REALSPACE
 PDF.append(ss.distributionWKB_RS(population, stochasticity[sto], cap[K], variability[var]))
-#QSD ALGORITHM
+# QSD ALGORITHM
 PDF.append(ss.statDistributionAlgo(population, stochasticity[sto], cap[K], variability[var]))
+# small n approx
+#PDF.append(ss.pdf_smalln_recursive_list(population, stochasticity[sto], cap[K], variability[var]))
 
-
-
-figname = 'Fig4'
+figname = 'Fig4' + '_q' + str(round(stochasticity[sto],3)) + '_d' + str(round(variability[var],3))
 plt.figure()
 ax = plt.gca()
 
-for i in range(0,len(PDF)):
+#for i in range(0,len(PDF)):
+for i in [0,1,2,3]:
     ax.plot(population, PDF[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[i], lw=3)
 
+
 ax.set_xlabel("Population")
-ax.set_ylabel("Probability density function")
+ax.set_ylabel("Probability distribution function")
 ax.set_yscale("log")
 ax.set_ylim(10**(-20), 10**(0))
 ax.get_yaxis().set_major_locator(LogLocator(numticks=5))

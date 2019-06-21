@@ -31,16 +31,23 @@ MTE.append(np.zeros(K+1))
 #EXACT SOLUTION
 MTE.append(ss.mteSum1D(cap, stochasticity[sto], cap, ss.maxPop(cap, stochasticity[sto], variability[var]), variability[var], tech="sum1d"))
 
+print(MTE[0])
 
-figname = 'Fig5'
+
+figname = 'Fig5' + '_q' + str(round(stochasticity[sto],3)) + '_d' + str(round(variability[var],3))
 plt.figure()
 ax = plt.gca()
 
+pdfls = 0
 for i in range(0,len(MTE)):
     if i==3:
-        ax.plot(cap[5:], MTE[i][5:], color=colors_techniques[i], label = techniques[i], linestyle=lines[i], lw=2)
+        ax.plot(cap[5:], MTE[i][5:], color=colors_techniques[i], label = techniques[pdfls], linestyle=lines[i], lw=2)
+    elif i==4 or i==5:
+        print("do not print t[1]")
+        pdfls -= 1
     else:
-        ax.plot(cap, MTE[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[i], lw=3)
+        ax.plot(cap, MTE[i], color=colors_techniques[i], label = techniques[i], linestyle=lines[pdfls], lw=3)
+    pdfls += 1
 
 ax.set_xlabel("Carrying capacity, K")
 ax.set_ylabel(r"$\tau_e$")

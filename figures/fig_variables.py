@@ -18,7 +18,7 @@ for dirs in [DIR_INPUT, DIR_OUTPUT]:
 
 techniques = ['FP QSD', 'FP Gaussian', 'WKB Realspace', 'QSD Algorithm', r"$\tau[1]$", "small n approx.", "Exact Solution"]
 colors_techniques = plt.cm.viridis(np.linspace(0.,1.,len(techniques))) #BuPu
-lines = [':', '-', ':', '-', ':', '-', '-']
+lines = ['-',':', '-', ':', '-', ':', '-', ':']
 n = 10
 colors_gradient = plt.cm.inferno(np.linspace(0,1,n))
 colors_gradient2 = plt.cm.YlGn(np.linspace(0,1,n))
@@ -27,16 +27,15 @@ capacity = 100.0
 stoc = 100
 vari = 1001
 #stochasticity = np.linspace(0.01, .99, 100)
-stochasticity = np.linspace(0.01, .99, stoc) #100
+stochasticity = np.linspace(0.01, 0.99, stoc) #100
 variability = np.logspace(-1.0, 1.0, vari) #1001
 cap = np.linspace(1.0, capacity, num=capacity)
 K = 99
 
-sto = stoc/10
-var = (vari-1)/2
-
-sto = 10
-var = 750
+sto = 20
+#sto = 70
+var = 300
+#var = 800
 
 
 stochasticity_i = np.linspace(0.1, 0.3, n)
@@ -50,8 +49,8 @@ FS = 16
 SHOW = True
 
 # axes
-POINTS_BETWEEN_TICKS_X = sto/10
-POINTS_BETWEEN_TICKS_Y = (var-1)/2
+POINTS_BETWEEN_TICKS_X = stoc/5
+POINTS_BETWEEN_TICKS_Y = (vari-1)/2
 
 def plot_heatmap(arr, xrange, yrange, fname, label, show=SHOW):
     # TODO change colour scheme, see https://matplotlib.org/examples/color/colormaps_reference.html
@@ -59,14 +58,17 @@ def plot_heatmap(arr, xrange, yrange, fname, label, show=SHOW):
     """
     Colours viridis, YlGnBu, terrain, plasma, BuPu
     """
-    print 'arr limits:', np.min(arr), np.max(arr)
     nlevels = 50
+    LOG = False
     # plot setup
     f = plt.figure()
-    imshow_kw = { 'cmap': 'inferno', 'aspect': None, 'vmin': np.min(arr), 'vmax': np.max(arr)}
-    #imshow_kw = { 'cmap': 'YlGnBu', 'aspect': None, 'vmin': np.min(arr), 'vmax': np.max(arr), 'norm': mpl.colors.LogNorm(50)}
-    im = plt.contourf(arr, nlevels, **imshow_kw)
-    #im = plt.contourf(arr, levels=np.logspace(np.log10(np.min(arr)),np.log10(np.max(arr)),nlevels), **imshow_kw) #doesn't give values of colorbar
+    if LOG:
+        imshow_kw = { 'cmap': 'YlGnBu', 'aspect': None, 'vmin': np.min(arr), 'vmax': np.max(arr), 'norm': mpl.colors.LogNorm(nlevels)}
+        im = plt.contourf(arr, levels=np.logspace(np.log10(np.min(arr)),np.log10(np.max(arr)),nlevels), **imshow_kw) #doesn't give values of colorbar
+    else:
+        imshow_kw = { 'cmap': 'inferno', 'aspect': None, 'vmin': np.min(arr), 'vmax': np.max(arr)}
+        im = plt.contourf(arr, nlevels, **imshow_kw)
+
 
     # axes setup
     ax = plt.gca()
@@ -84,7 +86,10 @@ def plot_heatmap(arr, xrange, yrange, fname, label, show=SHOW):
     ax.set_ylabel(r'$\delta$', fontsize=FS)
 
     # create colorbar
-    cbar = ax.figure.colorbar(im, ax=ax)
+    if LOG:
+        cbar = ax.figure.colorbar(im, ax=ax, ticks=mpl.ticker.LogLocator(base=10))
+    else:
+        cbar = ax.figure.colorbar(im, ax=ax)
     cbar.ax.set_ylabel(label, rotation=-90, va="bottom", fontsize=FS, labelpad=20)
     cbar.ax.tick_params(labelsize=FS)
     # TODO ID why do ticks hide sometimes?
