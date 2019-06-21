@@ -40,6 +40,8 @@ var = 300
 
 stochasticity_i = np.linspace(0.1, 0.3, n)
 variability_i = np.logspace(-1.0, 0.0, n)
+print(stochasticity_i)
+print(variability_i)
 
 
 MAX = ss.maxPop(cap[K], stochasticity[0], variability[-1])

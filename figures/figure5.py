@@ -10,13 +10,13 @@ plt.style.use('parameters.mplstyle')  # particularIMporting
 
 from matplotlib.ticker import LogLocator #log axes
 
-
 MTE = []
 
 exact_solution = ss.mteSum1D(cap, stochasticity[sto], cap, ss.maxPop(cap, stochasticity[sto], variability[var]), variability[var], tech="sum1d")
 #ORDER IS VERY IMPORTANT HERE
 #FP QSD
-MTE.append(ss.mte_from_FPpdf(cap, stochasticity[sto], cap, ss.maxPop(cap, stochasticity[sto], variability[var]), variability[var]))
+#MTE.append(ss.mte_from_FPpdf(cap, stochasticity[sto], cap, ss.maxPop(cap, stochasticity[sto], variability[var]), variability[var]))
+MTE.append([ss.mteFP_full(capacity, stochasticity[sto], capacity, ss.maxPop(capacity, stochasticity[sto], variability[var]), variability[var]) for capacity in cap])
 #FP GAUSSIAN
 MTE.append(ss.mteFP_gaussian(cap, stochasticity[sto], cap, ss.maxPop(cap, stochasticity[sto], variability[var]), variability[var]))
 #WKB REALSPACE
