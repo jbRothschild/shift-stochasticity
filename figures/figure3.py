@@ -2,7 +2,7 @@ import numpy as np
 import sys, os
 sys.path.append(os.path.abspath('..'))
 import mte.shiftStochasticity as ss
-from fig_variables import stochasticity, K, variability, stochasticity_i, variability_i, cap
+from fig_variables import stochasticity, K, variability, stochasticity_i, variability_i, cap, FS
 from fig_variables import *
 import fig_variables as fv
 import matplotlib.pyplot as plt
@@ -18,7 +18,7 @@ ratio=0.37 #plot to subplot
 LOAD = True
 LOAD_MTE = True
 
-if LOAD:
+if not LOAD:
     mte = []
     for i, stochas in enumerate(stochasticity_i):
         mte.append(ss.mteSum1D(cap[K], stochas, cap[K], ss.maxPop(cap[K], stochas, variability), variability, "sum1d"))
@@ -34,7 +34,7 @@ ax = plt.gca()
 for i, stochas in enumerate(stochasticity_i):
     ax.plot(variability, MTE[i], color=colors_gradient[i])
 
-ax.set_xlabel(r"$\delta$")
+ax.set_xlabel(r"Linear prefactor, $\delta$")
 ax.set_ylabel(r"$\tau_e$")
 ax.set_yscale("log")
 ax.set_xscale("log")
@@ -44,7 +44,7 @@ ax.minorticks_off()
 
 #plot within plot
 
-if LOAD_MTE:
+if not LOAD_MTE:
     mte = []
     for i, delta in enumerate(variability):
         mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, delta), delta, "sum1d"))
@@ -64,13 +64,15 @@ axes_ins = inset_axes(ax,
                     width=mpl.rcParams["figure.figsize"][0]/3, # width = 30% of parent_bbox
                     height=mpl.rcParams["figure.figsize"][1]/3, # height : 1 inch
                     loc=1)
-axes_ins.contourf(stochasticity, variability, np.asarray(MTE2), cmap=plt.cm.YlGnBu, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
+axes_ins.contourf(stochasticity, variability, np.asarray(MTE2), cmap=plt.cm.YlGnBu, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum), fontsize=10)
 for c in axes_ins.collections: #So there are no white lines appearing in 2D plot
     c.set_edgecolor("face")
 axes_ins.set_yscale("log")
 axes_ins.minorticks_off()
 axes_ins.set_xticks([])
 axes_ins.set_yticks([])
+#axes_ins.set_xlabel(r"Quadratic prefactor, $q$")
+#axes_ins.set_ylabel(r"Linear prefactor, $\delta$")
 axes_ins.set_xlabel(r"$q$")
 axes_ins.set_ylabel(r"$\delta$")
 for i, stochas in enumerate(stochasticity_i):
@@ -81,7 +83,7 @@ plt.savefig(DIR_OUTPUT + os.sep + figname + '.eps')
 plt.close()
 
 #__________________________B____________________________________
-if LOAD:
+if not LOAD:
     mte = []
     for i, varia in enumerate(variability_i):
         mte.append(ss.mteSum1D(cap[K], stochasticity, cap[K], ss.maxPop(cap[K], stochasticity, varia), varia, "sum1d"))
@@ -97,7 +99,7 @@ ax = plt.gca()
 for i, varia in enumerate(variability_i):
     ax.plot(stochasticity, MTE[i], color=colors_gradient[i])
 
-ax.set_xlabel(r"$q$")
+ax.set_xlabel(r"Quadratic prefactor, $q$")
 ax.set_ylabel(r"$\tau_e$")
 ax.set_yscale("log")
 ax.set_xlim([np.min(stochasticity),np.max(stochasticity)])
@@ -110,13 +112,15 @@ axes_ins = inset_axes(ax,
                     height=mpl.rcParams["figure.figsize"][1]/3, # height : 1 inch
                     loc=2)
 
-axes_ins.contourf(stochasticity, variability, np.asarray(MTE2), cmap=plt.cm.YlGnBu, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum))
+axes_ins.contourf(stochasticity, variability, np.asarray(MTE2), cmap=plt.cm.YlGnBu, norm=LogNorm(), levels=np.logspace(minimum, maximum, maximum), fontsize=10)
 for c in axes_ins.collections: #So there are no white lines appearing in 2D plot
     c.set_edgecolor("face")
 axes_ins.set_yscale("log")
 axes_ins.minorticks_off()
 axes_ins.set_xticks([])
 axes_ins.set_yticks([])
+#axes_ins.set_xlabel(r"Quadratic prefactor, $q$")
+#axes_ins.set_ylabel(r"Linear prefactor, $\delta$")
 axes_ins.set_xlabel(r"$q$")
 axes_ins.set_ylabel(r"$\delta$")
 axes_ins.yaxis.set_label_position("right")

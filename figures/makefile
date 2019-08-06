@@ -10,7 +10,7 @@ all : $(ALL_FIGS)
 
 ## fig% : runs figure%.py
 fig% : figure%.py
-	python $<
+	python2 $<
 
 
 ## clean : remove auto-generated files

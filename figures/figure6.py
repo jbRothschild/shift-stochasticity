@@ -23,8 +23,8 @@ cbar = fig.colorbar(cax, ticks=[np.min(mean), (np.max(mean)-np.min(mean))/2., np
 for c in ax.collections:
     c.set_edgecolor("face")
 cbar.ax.set_ylabel(r'Population mean')
-ax.set_xlabel(r"$q$")
-ax.set_ylabel(r"$\delta$")
+ax.set_xlabel(r"Quadratic prefactor, $q$")
+ax.set_ylabel(r"Linear prefactor, $\delta$")
 ax.set_yscale("log")
 ax.minorticks_off()
 lp.savefig("Figure6-A")
@@ -42,8 +42,8 @@ cbar = fig.colorbar(cax, ticks=[np.min(var), (np.max(var)-np.min(var))/2., np.ma
 for c in ax.collections:
     c.set_edgecolor("face")
 cbar.ax.set_ylabel(r'Population variance')
-ax.set_xlabel(r"$q$")
-ax.set_ylabel(r"$\delta$")
+ax.set_xlabel(r"Quadratic prefactor, $q$")
+ax.set_ylabel(r"Linear prefactor, $\delta$")
 ax.set_yscale("log")
 ax.minorticks_off()
 lp.savefig("Figure6-B")

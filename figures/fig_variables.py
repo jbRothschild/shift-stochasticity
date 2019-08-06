@@ -47,7 +47,8 @@ print(variability_i)
 MAX = ss.maxPop(cap[K], stochasticity[0], variability[-1])
 
 # plot params
-FS = 16
+FS = 20
+mpl.rcParams.update({'font.size':FS})
 SHOW = True
 
 # axes
@@ -84,8 +85,8 @@ def plot_heatmap(arr, xrange, yrange, fname, label, show=SHOW):
     ax.set_xticklabels([r'$%.1f$' % round(xval,1) for i, xval in enumerate(xrange) if i % POINTS_BETWEEN_TICKS_X == 0], fontsize=FS)
     ax.set_yticklabels([r'$10^{%d}$' % np.log10(yval) for i, yval in enumerate(yrange) if i % POINTS_BETWEEN_TICKS_Y == 0], fontsize=FS)
 
-    ax.set_xlabel(r'$q$', fontsize=FS)
-    ax.set_ylabel(r'$\delta$', fontsize=FS)
+    ax.set_xlabel(r'Quadratic prefactor, $q$', fontsize=FS)
+    ax.set_ylabel(r'Linear prefactor, $\delta$', fontsize=FS)
 
     # create colorbar
     if LOG:

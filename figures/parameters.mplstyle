@@ -14,7 +14,7 @@ figure.figsize : 7.2, 4.45 # size in inches
 savefig.dpi : 300 # Generally 300 is the accepted quality
 
 ## FONT
-font.size : 12
+font.size : 16
 font.family : serif
 font.serif : cm # cm -> Computer modern
 
@@ -29,8 +29,8 @@ lines.markersize : 6.0            # markersize, in points
 
 ## AXES
 
-axes.titlesize : 12
-axes.labelsize : 12
+axes.titlesize : 16
+axes.labelsize : 16
 #axes.prop_cycle : cycler('color', ['blue', 'green', 'red', 'cyan', 'magenta', 'yellow', 'black', 'purple', 'pink', 'brown', 'orange', 'teal', 'coral', 'lightblue', 'lime', 'lavender', 'turquoise', 'darkgreen', 'tan', 'salmon', 'gold', 'darkred', 'darkblue']) # Might want to change the color scheme
 
 ## TICKS
@@ -40,7 +40,7 @@ xtick.minor.size : 2      # minor tick size in points
 xtick.major.width : 1    # major tick width in points
 xtick.minor.width : 1    # minor tick width in points
 xtick.direction : in     # direction: in, out, or inout
-xtick.labelsize : 10
+xtick.labelsize : 16
 #xtick.top : False # For some reason this isn't working for me, neither is ytick.right :False (Jeremy)
 
 ytick.major.size : 4      # major tick size in points
@@ -49,11 +49,11 @@ ytick.major.width : 1    # major tick width in points
 ytick.minor.width : 1    # minor tick width in points
 ytick.major.pad : 6      # distance to major tick label in points
 ytick.direction : in # direction: in, out, or inout
-ytick.labelsize : 10
+ytick.labelsize : 16
 #ytick.right : False
 
 
 ## LEGEND
 
-legend.fontsize : 11
+legend.fontsize : 12
 legend.loc : best
