@@ -144,15 +144,19 @@ def pdf_smalln_recursive_normalizer(stoch, cap, delta=1.):
     for ex in range(1,int(cap*(1+delta)/stoch)):#ie. up to the cutoff
         normalizer+=pdf_smalln_recursive_unnormalized(ex, stoch, cap, delta)
     return normalizer
+
 def pdf_smalln_recursive(x, stoch, cap, delta=1.):
     return pdf_smalln_recursive_unnormalized(x, stoch, cap, delta)/pdf_smalln_recursive_normalizer(stoch,cap,delta)
+
 def pdf_smalln_recursive_list(x, stoch, cap, delta=1.):
     temp=[0. for i in x];
     for j,n in enumerate(x):
         temp[j]=pdf_smalln_recursive_unnormalized(n, stoch, cap, delta)/pdf_smalln_recursive_normalizer(stoch,cap,delta)
     return temp
+
 def mte_smalln_recursive(stoch,cap,delta=1.):#does not like numpy.ndarray arguments
         return pdf_smalln_recursive_normalizer(stoch,cap,delta)/deathrate(1,delta,stoch,cap)
+
 def mte_smalln_recursive_list(stoch,cap,delta=1.):
         temp=[0. for i in cap];
         for j,pacity in enumerate(cap):

@@ -18,22 +18,22 @@ As the choice of birth and death rates contains ambiguity, researchers have leew
 
 For instance, a bacterial species $x$ could produce and secrete a waste product $w$ that then increases its death rate. 
 The bacterial dynamics are written as
-\begin{equation*}
+\begin{equation}
 \dot{x} = \beta x - \mu x - e w x
 %\dot{x} = \beta x - \mu x - e\, w\, x
-\end{equation*}
+\end{equation}
 with birth rate $\beta$, natural death rate $\mu$, and an increased death rate proportional to the amount of waste in the system, with proportionality constant $e$, the efficacy of the waste in killing the bacteria. 
 The waste product obeys its own dynamical equation
-\begin{equation*}
+\begin{equation}
 \dot{w} = g x - \lambda w
-\end{equation*}
+\end{equation}
 with decay rate $\lambda$ and generation rate $g$ from the bacteria. 
 Secreted factors tend to degrade on the order of minutes \cite{Belle2006}, whereas cell division and death occurs over hours \cite{Powell1956,Lenski1991}, hence we can make a separation of timescales argument to assume that the waste product equilibrates more quickly. 
 The dynamics of the secreted factor can be assumed to adiabatically reach a steady state $w^* = g x/\lambda$. 
 Inserting this value into the bacterial dynamics equation gives
-\begin{equation*}
+\begin{equation}
 \dot{x} = \beta x - \mu x - e \left( \frac{g x}{\lambda} \right) x = \big( \beta - \mu \big) x - \frac{e g}{\lambda} x^2.
-\end{equation*}
+\end{equation}
 This is exactly the logistic equation \ref{logistic}, with rate constant $r = \beta - \mu$ and carrying capacity $K = \left( \beta - \mu \right) \frac{\lambda}{e g}$. 
 
 Extinction in the logistic equation occurs at $n=0$, an unstable fixed point, whereas there is a stable fixed point at $n=K$. %new/modified
@@ -48,12 +48,12 @@ Such stochasticity is termed demographic noise.
 Instead of a birth rate $b_n$ we assume that each birth event is independent and distributed exponentially with a probability $b_n\,dt$ of occuring in each infinitesimal time interval $dt$, and this is similarly assumed for death events. %too technical? Or esoteric?
 In this paper we use the birth rate
 \begin{equation}
- b_n = \Big(1 + \delta\Big)\,r\,n - \frac{q\,r}{K}n^2% = r\,n\left(1+\delta-q\,n/K\right)
+ b_n = r\,\Big(1 + \delta\Big)\,n - \frac{r\,q}{K}n^2% = r\,n\left(1+\delta-q\,n/K\right)
 \label{birth}
 \end{equation}
 and death rate
 \begin{equation}
- d_n = \delta\,r\,n + \frac{(1-q)r}{K} n^2 = r\,n\left(\delta+(1-q)\,n/K\right).
+ d_n = \,r\delta\,n + \frac{r\,(1-q)}{K} n^2
 \label{death}
 \end{equation}
 Note that we introduce two new parameters in our equations \ref{birth} and \ref{death}: $q\in[0,1]$ shifts the nonlinearity between the death term and the birth term whereas the parameter $\delta\in[0,\infty)$ establishes a scale for the contribution of linear terms in both the birth and death rates.

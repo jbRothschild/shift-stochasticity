@@ -11,9 +11,9 @@ Note that ultimately at large times the probability of being at population size 
 Prior to reaching extinction, the system tends toward a quasi-stationary distribution.
 
 We are interested in this conditional probability distribution function $P_n^c$: the probability distribution of the population conditional to not being in the extinct state: %stationary
-\begin{equation*}
+\begin{equation}
 P_n^c = \frac{P_n}{1-P_0}.
-\end{equation*}
+\end{equation}
 This dynamics of the distribution are described in a slightly different master equation than equation \ref{master-eqn}:
 \begin{equation}
 \frac{dP_n^c}{dt} =  b_{n-1}P_{n-1}^c(t) + d_{n+1}P_{n+1}^c(t) - (b_n + d_n - P_1^c(t)d_1)P_n^c(t).
@@ -21,6 +21,16 @@ This dynamics of the distribution are described in a slightly different master e
 \end{equation}
 After an initial transient period, this conditional probability will stabilize to some steady $\tilde{P}^c_n$ for which $d\tilde{P}_n^c/dt=0$.
 The steady state of this distribution is referred to as the quasi-stationary distribution, not to be confused with the true stationary distribution of the population which is the state where $\tilde{P}_n(t \rightarrow \infty)=\delta_{n,0}$.
+
+\begin{figure}[ht!]
+  \centering
+  \subfloat[\emph{Mean of the probablity distribution of the population size, with capacity $K=100$.}]{\includegraphics[width=0.5\textwidth]{Figure1-A}\label{qsd:q}}
+  \hfill
+  \subfloat[\emph{Variance of the probability distribution of the population.}]{\includegraphics[width=0.5\textwidth]{Figure1-B}\label{qsd:delta}}
+  \caption{\emph{Probability distribution of the population} The conditional probability distribution functions as found using the quasi-stationary distribution algorithm. [NEED TO ADD SOMETHING ABOUT THE PROBABILITY DISTRIBUTION BEING NOT PERFECTLY GAUSSIAN]}
+  \label{qsd}
+%The range along the horizontal axis does not fully cover the population, it is truncated to show the relevant region of the distribution. In fact each curve has a different range as the parameters $\delta$ and $q$ vary the maximum population size according to equation \ref{maxN}.
+\end{figure}
 
 One way to obtain the quasi-stationary distribution is to exploit equation \ref{masters2} in an algorithm in which we iteratively calculate the change in the distribution $\Delta P^c_n$ in an arbitrarily small time interval $\Delta t$ until all change in the distribution is negligible \cite{Nisbet1982}.
 %We start with an arbitrary initial distribution $P^c_n(0)$ and calculate the change $\Delta P^c_n$ for each $n$ in an arbitrarily small time interval $\Delta t$.
@@ -31,15 +41,6 @@ One way to obtain the quasi-stationary distribution is to exploit equation \ref{
 Decreasing the time step $\Delta t$ increases both the accuracy and the runtime, such that an arbitrarily accurate distribution takes a prohibitively long time to calculate.
 We settle for $\Delta P^c_n<\epsilon = 10^{-16}$. %CHECK THIS%Maybe have this in the figure caption - figure goes to probabilities of 10^-20, which is fine, as this -16 is the maximal difference, not necessarily the resolution at the extremes
 
-\begin{figure}[ht!]
-  \centering
-  \subfloat[\emph{Probability distribution with $\delta=0.50$ and $K=100$}]{\includegraphics[width=0.5\textwidth]{Figure1-A}\label{qsd:q}}
-  \hfill
-  \subfloat[\emph{Probability distribution with $q=0.06$ and $K=100$}]{\includegraphics[width=0.5\textwidth]{Figure1-B}\label{qsd:delta}}
-  \caption{\emph{Probability distribution of the population} The conditional probability distribution functions as found using the quasi-stationary distribution algorithm. Note that for each curve, the population cutoff $N$ is outside the domain presented here. In \ref{qsd:q} increasing lightness indicates an increase in $q$. Similarly, the lightness increase in \ref{qsd:delta} corresponds to an increase in $\delta$}
-  \label{qsd}
-%The range along the horizontal axis does not fully cover the population, it is truncated to show the relevant region of the distribution. In fact each curve has a different range as the parameters $\delta$ and $q$ vary the maximum population size according to equation \ref{maxN}.
-\end{figure}
 
 Results of this algorithm, for different values of $q$ and $\delta$, are presented in Figure \ref{qsd}.
 Increasing the value of $\delta$ shifts the mode toward the anterior of the distribution and spreads the distribution out, increasing the variance.
