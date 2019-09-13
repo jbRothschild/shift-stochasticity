@@ -182,6 +182,40 @@ def mteFP_full(fixedPoints, stoch, cap, N, delta): #MAB
     tointegrate = lambda x: FPnumer(x, stoch, cap, N, delta)/FPdenom(x, stoch, cap, N, delta)
     return inte.quad(tointegrate, 0., cap)[0] #[0] is the result, [1] is the error
 
+def FPpsi(x, stoch, cap, N, delta): #MAB
+    """ alternative writing """
+    return np.exp(-2*cap*x/(1.0-2.0*stoch) + 2.*cap*(2.+delta-2.*stoch)*np.log((1.0+delta)+x*(1.0-2.0*stoch))/(1.-2.*stoch)**2)
+
+def FPinner(y, stoch, cap, N, delta): #MAB
+    tointegrate = lambda x: FPpsi(x, stoch, cap, N, delta)/(x*(1+delta+(1-2*stoch)*x))
+    return inte.quad(tointegrate, y, 2*1.)[0]
+
+def mteFP_full2_hater(n, stoch, cap, N, delta): #MAB
+    #DOESN'T SEEM TO LIKE HIGH DELTAS
+    tointegrate = lambda x: 2*cap*FPinner(x, stoch, cap, N, delta)/FPpsi(x, stoch, cap, N, delta)
+    return inte.quad(tointegrate, 0., n/cap)[0] #[0] is the result, [1] is the error
+
+def mteFP_full2(n, stoch, cap, N, delta): #MAB
+    #assumes n and cap are arrays
+    mte = []
+    for i, x in enumerate(cap):
+        mte.append(mteFP_full2_hater(x, stoch, x, 200, delta))
+    return np.asarray(mte)
+
+def mteFP_full22(n, stoch, cap, N, delta): #MAB
+    #assumes delta is an array
+    mte = []
+    for i, x in enumerate(delta):
+        mte.append(mteFP_full2_hater(cap, stoch, cap, 200, x))
+    return np.asarray(mte)
+
+def mteFP_full222(n, stoch, cap, N, delta): #MAB
+    #assumes q is an array
+    mte = []
+    for i, x in enumerate(stoch):
+        mte.append(mteFP_full2_hater(cap, x, cap, 200, delta))
+    return np.asarray(mte)
+
 #------------FP full except quasistationary (ie dP/dt=0)------------------ #MAB
 
 def pdfFP_full(x, stoch, cap, delta): #MAB
