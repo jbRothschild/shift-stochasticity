@@ -1,5 +1,5 @@
 import numpy as np
-import shiftStochasticity as ss
+import mte.shiftStochasticity as ss
 
 def mean_var(probability_function, stochasticity, variability, cap):
 
@@ -13,7 +13,6 @@ def mean_var(probability_function, stochasticity, variability, cap):
             pdf = probability_function(n, stoch, cap, delta)
             mean[i,j] = np.sum( np.multiply(n, pdf) )
             variance[i,j] = np.sum(np.multiply(n**2, pdf) ) - mean[i,j]**2
-            print "done!"
 
     return mean, variance
 
@@ -22,6 +21,6 @@ def exact_solution(population, stoch,cap, delta):
         q /= np.sum(q)
         return q
 
-mean, var = mean_var(exact_solution, stochasticity, variability, K )
-np.save("../data/mean_prob_K100.npy", mean)
-np.save("../data/error_prob_K100.npy", var/mean**2)
+#mean, var = mean_var(exact_solution, stochasticity, variability, K )
+#np.save("../data/mean_prob_K100.npy", mean)
+#np.save("../data/error_prob_K100.npy", var/mean**2)

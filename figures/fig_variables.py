@@ -2,8 +2,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import sys, os
-sys.path.append(os.path.abspath('..')) #To add the model modules paths
-import mte.shiftStochasticity as ss #All our models
+sys.path.append(os.path.abspath('..')) # To add the model modules paths
+import mte.shiftStochasticity as ss # All our models
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ n = 10
 colors_gradient = plt.cm.inferno(np.linspace(0,1,n))
 colors_gradient2 = plt.cm.YlGn(np.linspace(0,1,n))
 
-capacity = 100.0
+capacity = 100
 stoc = 100
 vari = 1001
 #stochasticity = np.linspace(0.01, .99, 100)
@@ -40,9 +40,6 @@ var = 300
 
 stochasticity_i = np.linspace(0.1, 0.3, n)
 variability_i = np.logspace(-1.0, 0.0, n)
-print(stochasticity_i)
-print(variability_i)
-
 
 MAX = ss.maxPop(cap[K], stochasticity[0], variability[-1])
 

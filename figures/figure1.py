@@ -17,13 +17,14 @@ plt.figure()
 ax = plt.gca()
 
 pdf = []
-"""
+
 for i, stochas in enumerate(stochasticity_i):
     pdf.append(ss.statDistributionAlgo(ss.maxPop(cap[K], stochas, variability[var]), stochas, cap[K], variability[var], 10))
     print("1A")
-np.save("../data/pdf_stoch.npy", pdf)
-"""
-PDF = np.load("../data/pdf_stoch.npy")
+#np.save("../data/pdf_stoch.npy", pdf)
+
+# PDF = np.load("../data/pdf_stoch.npy")
+PDF = pdf
 
 for i, stochas in enumerate(stochasticity_i):
     ax.plot(range(1,len(PDF[i])+1), PDF[i], color=colors_gradient2[i])
@@ -47,14 +48,15 @@ figname = 'Fig1B'
 plt.figure()
 ax = plt.gca()
 pdf = []
-"""
+
 for i, varia in enumerate(variability_i):
     pdf.append(ss.statDistributionAlgo(ss.maxPop(cap[K], stochasticity[sto], varia), stochasticity[sto], cap[K], varia, 10))
     print("1B")
-np.save("../data/pdf_varia.npy", pdf)
-"""
+# np.save("../data/pdf_varia.npy", pdf)
 
-PDF = np.load("../data/pdf_varia.npy")
+
+#PDF = np.load("../data/pdf_varia.npy")
+PDF = pdf
 
 for i, varia in enumerate(variability_i):
     ax.plot(range(1,len(PDF[i])+1), PDF[i], color=colors_gradient2[i])

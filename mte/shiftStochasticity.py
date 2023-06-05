@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.insert(0, '/home/jrothschild/Research')
+# sys.path.insert(0, '/home/jrothschild/Research')
 
 #import scipy as sp
 import scipy.integrate as inte
@@ -19,10 +19,10 @@ def gaussian(x, mean, std):
     return np.sqrt(2*np.pi*std**2)**(-1) * np.exp( -( (x-mean)/(np.sqrt(2)*std) )**2 )
 
 def birthrate(n, delta, stoch, cap):
-    return (1+delta/2)*n-stoch*n**2/cap
+    return (1 + delta / 2 ) * n - stoch * n ** 2 / cap
 
 def deathrate(n, delta, stoch, cap):
-    return delta*n/2+(1-stoch)*n**2/cap
+    return delta / 2 * n + (1 - stoch) * n ** 2 / cap
 
 #----------1D Sum & Tau[1]-------------
 
@@ -41,7 +41,7 @@ def rates(stoch, cap, delta, maxSum):
     """
 
     Q = np.array([deathrate(1, delta, stoch, cap)**(-1)])
-    #S = np.array([deathrate(1, delta, stoch, cap)*birthrate(1, delta, stoch, cap)**(-1)])
+    # S = np.array([deathrate(1, delta, stoch, cap)*birthrate(1, delta, stoch, cap)**(-1)])
     S = np.array([0])
     if (cap!=1):
         S = np.array([0,deathrate(1, delta, stoch, cap)*birthrate(1, delta, stoch, cap)**(-1)])
@@ -110,7 +110,13 @@ def mte1Dsum_tau1(fixedPoints, stoch, cap, N, delta): #MAB
     Returns:
         The Mean Time for extinction
     """
-    return abs(float(2*cap*mp.hyp3f2(1,1,1-cap/stoch-delta*cap/(2*stoch),2,(2+delta*cap/2-2*stoch)/(stoch-2),stoch/(stoch-1))/(2+delta*cap-2*stoch)))
+    return abs(float(2 * cap * mp.hyp3f2(1, 
+                                         1,
+                                         1 - cap / stoch - delta * cap / (2 * stoch),
+                                         2,
+                                         (2 + delta * cap / 2 - 2 * stoch) / (stoch - 2),
+                                         stoch / (stoch - 1)) 
+                     / (2 + delta * cap - 2 * stoch)))
 
 def mte1dsum_totaltau1(fixedPoints, stoch, cap, N, delta):
     mte = []
@@ -576,10 +582,6 @@ def main():
     q,s = rates(stochasticity[sto], cap[K], variability[var], maxPop(cap[K],stochasticity[sto],variability[var]))
     dist = q/np.sum(q)
     #hypdist = analyticQuasiStationaryPDF(pop, variability[var], stochasticity[sto], cap[K])
-
-    print(len(algodist))
-    print(len(dist))
-    #print(len(hypdist))
 
     plt.figure()
     plt.plot(algodist, 'c',label='Algo', linewidth=3)
